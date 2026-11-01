@@ -1,0 +1,24 @@
+\begin{tabular}{lrrl}
+\toprule
+\textbf{Check} & \textbf{Trips} & \textbf{\% of raw} & \textbf{What we do} \\
+\midrule
+Trips in the downloaded files & 11,844,428 & 100.00 & -- \\
+Started outside the downloaded months & 1,626 & 0.01 & dropped \\
+Duplicate ride IDs & 0 & 0.00 & dropped (kept first) \\
+Shorter than 1 min & 0 & 0.00 & dropped \\
+Longer than 180 min & 16,130 & 0.14 & dropped \\
+No start station ID & 6,704 & 0.06 & kept; not in station views \\
+No end station ID & 37,704 & 0.32 & kept; not in station views \\
+\quad of which e-bikes & 35,368 & 0.30 &  \\
+\quad of which classic bikes & 2,336 & 0.02 &  \\
+\quad with end coordinates & 38 & 0.00 &  \\
+Round trips (same start and end) & 228,940 & 1.93 & kept, flagged \\
+Trips after cleaning & 11,826,946 & 99.85 & -- \\
+\midrule
+Stations found in trips & 2,378 & & \\
+\quad capacity matched by ID & 2,185 & & \\
+\quad capacity matched by location & 123 & & within 75 m \\
+\quad capacity missing & 70 & & shown as ``no data'' \\
+\quad outside any NYC neighborhood & 68 & & \\
+\bottomrule
+\end{tabular}

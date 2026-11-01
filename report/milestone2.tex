@@ -1,0 +1,325 @@
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper, margin=0.8in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{linkblue}{HTML}{1F5FA8}
+\definecolor{changebg}{HTML}{FFF4D6}
+\hypersetup{colorlinks=true, urlcolor=linkblue, linkcolor=linkblue}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titlespacing*{\section}{0pt}{12pt}{4pt}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.6em}{}
+\titlespacing*{\subsection}{0pt}{10pt}{2pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist{nosep, leftmargin=1.4em, topsep=3pt}
+
+% Highlight for anything that changed since Milestone 1
+\newcommand{\changed}[1]{\colorbox{changebg}{\parbox{\dimexpr\linewidth-2\fboxsep}{\small\textbf{Changed since M1:} #1}}}
+
+% ------------------------------------------------------------------
+% Numbers and tables are written by scripts/build.py into tables/.
+\newcommand{\DataMonths}{\textit{[run build.py]}}
+\newcommand{\TripsRaw}{\textit{[n]}}
+\newcommand{\TripsClean}{\textit{[n]}}
+\newcommand{\NoEndStationPct}{\textit{[x]}}
+\newcommand{\NoEndStationEbikePct}{\textit{[x]}}
+\newcommand{\NStations}{\textit{[n]}}
+\newcommand{\NCapMissing}{\textit{[n]}}
+\newcommand{\NWeekdays}{\textit{[n]}}
+\newcommand{\NWeekends}{\textit{[n]}}
+\newcommand{\NoEndStationN}{\textit{[n]}}
+\newcommand{\NoEndNoCoordsN}{\textit{[n]}}
+\newcommand{\NoEndWithCoordsN}{\textit{[n]}}
+\newcommand{\NoStartStationN}{\textit{[n]}}
+\newcommand{\NOutsideNYC}{\textit{[n]}}
+\newcommand{\NCapMissingNYC}{\textit{[n]}}
+\newcommand{\NCapZero}{\textit{[n]}}
+\newcommand{\NCapNotInFeed}{\textit{[n]}}
+\IfFileExists{tables/meta.tex}{\input{tables/meta.tex}}{}
+
+\newcommand{\datatable}[1]{%
+  \IfFileExists{tables/#1.tex}{{\small\input{tables/#1.tex}}}%
+  {\fbox{\parbox{0.9\linewidth}{\centering\small\textit{Run scripts/build.py to fill in tables/\detokenize{#1}.tex}}}}}
+
+% Sketches live in ../sketches as q1.jpg / q1.png / q1.pdf (same for q2 ... q5)
+\newcommand{\sketch}[2]{%
+  \begin{figure}[H]\centering
+  \IfFileExists{../sketches/#1.jpg}{\includegraphics[width=0.9\linewidth]{../sketches/#1.jpg}}{%
+  \IfFileExists{../sketches/#1.png}{\includegraphics[width=0.9\linewidth]{../sketches/#1.png}}{%
+  \IfFileExists{../sketches/#1.pdf}{\includegraphics[width=0.9\linewidth]{../sketches/#1.pdf}}{%
+  \fbox{\parbox[c][1.8in][c]{0.8\linewidth}{\centering\small\textit{Sketch goes here: sketches/\detokenize{#1}.jpg}}}}}}
+  \caption{#2}
+  \end{figure}}
+% ------------------------------------------------------------------
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries Spokes \& Flows: Milestone 2, Data Analysis and Sketches}\\[3pt]
+  Team 2 \quad|\quad Harshith Kori Raj (hk4488), Lakshmi Hukunda Raju (lh41410)\\
+  CS-GY 6313 B Information Visualization, Fall 2026\\[2pt]
+  Code: \href{https://github.com/HarshithKoriRaj/spokesnflows}{github.com/HarshithKoriRaj/spokesnflows}
+  (private, shared with \texttt{ctsilva} and \texttt{kimryan0416})
+\end{center}
+
+\section{What changed since Milestone 1}
+
+The feedback said our plan was too big for two people and that our best line was ``where does the system
+struggle, and when?'' We used that sentence to decide what to keep. Every change is also marked with a yellow
+\emph{Changed since M1} box next to the question it affects.
+
+\textbf{Audience.} Our main reader is someone planning the Citi Bike network, such as NYC DOT staff or a community
+board deciding where to add docks. They need to see which stations keep losing or gaining bikes through riders'
+trips, at what hours, and where those trips come from. A second reader is a regular rider who wants to know which
+stations tend to drain at their commute time.
+
+\textbf{Questions we kept, merged, refined and dropped.}
+\begin{itemize}
+  \item \textbf{Q1. When do people ride?} Kept. It sets up the daily rhythm the other views rely on.
+  \item \textbf{Q2. Where and when do stations gain or lose bikes through trips?} Our old Q2 (where trips happen)
+        and Q3 (imbalance) are now one map, as the feedback suggested.
+  \item \textbf{Q3. Where do the trips behind that imbalance come from?} Our old Q4. We planned to focus on East
+        River crossings, but the data showed they are only about 6.5\% of weekday morning trips
+        (Table~\ref{tab:q3shares}). Most trips go to a nearby neighborhood in the same borough. So the question is
+        now about neighborhood-to-neighborhood flows in general, and East River crossings are just one filter.
+  \item \textbf{Q4. How much do weather and season change ridership?} Our old Q6. Kept because it is cheap (one row
+        per day) and it tells a planner how much of a busy or quiet day is just the weather.
+  \item \textbf{Q5 (optional). Do e-bike trips differ from classic-bike trips?} Our old Q5. The data part is done
+        because it comes from the same cleaned table. We will only build the view if time allows.
+  \item \textbf{Dropped:} our old Q7 (whether new stations connect to the rest of the network). It needs a second
+        year of data and a network layout, and it doesn't help answer the main question. We also did not take on the
+        optional congestion-pricing extension.
+\end{itemize}
+
+\textbf{Three months instead of a full year.} We use January, July and October 2025: one winter, one summer and one
+fall month, \TripsRaw\ trips in total. This covers the seasonal range for Q4 while keeping the processing light.
+Our pipeline works on any set of months, so the code would not change if we added more.
+
+\section{Data handling}
+
+\subsection{Sources}
+\begin{itemize}
+  \item \href{https://citibikenyc.com/system-data}{Citi Bike trip histories} published by Lyft. Monthly files from the
+        \href{https://s3.amazonaws.com/tripdata/index.html}{public S3 bucket}: \texttt{202501}, \texttt{202507} and
+        \texttt{202510-citibike-tripdata.zip}. One row is one trip.
+  \item Dock capacity from the \href{https://gbfs.citibikenyc.com/gbfs/2.3/gbfs.json}{Citi Bike GBFS feed}
+        (\texttt{station\_information}, downloaded November 2026).
+  \item \href{https://data.cityofnewyork.us/d/9nt8-h7nd}{2020 Neighborhood Tabulation Areas} from NYC Open Data
+        (262 areas, with borough names).
+  \item \href{https://www.ncei.noaa.gov/cdo-web/datasets/GHCND/stations/GHCND:USW00094728/detail}{NOAA daily weather,
+        Central Park}: daily high and low temperature, rain and snow.
+\end{itemize}
+How to get each file is listed in the repository README.
+
+\subsection{Pipeline}
+Everything runs in two scripts. \texttt{scripts/download.py} fetches the files. \texttt{scripts/build.py} converts
+each month to Parquet, loads it into DuckDB, cleans it, joins the other datasets and writes the small tables the
+visualizations will read. It also writes every table and number in this report. A full run on the three months
+takes about 40 seconds on a laptop.
+
+\begin{enumerate}
+  \item \textbf{Filter:} keep trips that start in one of the three months (each file also holds a few trips that
+        began the evening before), and drop trips longer than 3 hours, which are almost always bikes that weren't
+        docked properly. The operator already removes trips under 60 seconds.
+  \item \textbf{Derive:} trip duration, straight-line distance, start and end hour, day of week, and weekday/weekend.
+  \item \textbf{Stations:} key each station on its ID, take its most common name, and use the median coordinates of
+        classic-bike trips (classic bikes report the dock's position; e-bikes report their own GPS).
+  \item \textbf{Join:} dock capacity from GBFS (by station ID, then by location within 75 m), neighborhood and
+        borough by point-in-polygon, and weather by date.
+  \item \textbf{Aggregate:} write the processed tables in Table~\ref{tab:map}.
+\end{enumerate}
+
+\begin{table}[H]\centering\small
+\begin{tabular}{llrl}
+\toprule
+\textbf{Processed table} & \textbf{One row is} & \textbf{Rows} & \textbf{Used by} \\
+\midrule
+\texttt{hourly\_profile.csv} & day of week $\times$ hour $\times$ rider type & 336 & Q1 \\
+\texttt{station\_hour.csv} & station $\times$ weekday/weekend $\times$ hour & 114,144 & Q2 \\
+\texttt{stations.csv} & station (location, docks, neighborhood) & 2,378 & Q2, Q3 \\
+\texttt{od\_nta.csv} & neighborhood pair $\times$ time period & 32,054 & Q3 \\
+\texttt{daily.csv} & day, with weather & 93 & Q4 \\
+\texttt{bike\_type\_summary.csv} & bike type $\times$ rider type & 4 & Q5 \\
+\texttt{distance\_hist.csv} & bike type $\times$ 0.25 km distance bin & 66 & Q5 \\
+\bottomrule
+\end{tabular}
+\caption{Every view reads from one of these tables, and all of them come from the same cleaned trip table.}\label{tab:map}
+\end{table}
+
+\subsection{What we found when checking the data}
+
+\begin{table}[H]\centering
+\datatable{quality}
+\caption{Each check, how many trips it affects, and what we do. Percentages are of the raw trip count.}\label{tab:quality}
+\end{table}
+
+\textbf{Trips with no end station (feedback point 3).} \NoEndStationN\ trips (\NoEndStationPct\%) have no end
+station, and \NoEndStationEbikePct\% of them are e-bikes. We expected these to be e-bikes left outside a dock, but
+\NoEndNoCoordsN\ of them also have no end coordinates, so we can't tell where they ended. Only \NoEndWithCoordsN\
+trips end at a known location away from a station. The classic-bike trips in this group last about 25 hours, which
+looks like the system closing trips for bikes that were never returned. So the 2025 files have essentially no
+``dockless'' trips with a known end point. We keep these trips in the time and weather views (Q1, Q4) and leave them
+out of the station and neighborhood views (Q2, Q3), which slightly undercounts arrivals there. Likewise,
+\NoStartStationN\ trips have no start station and no start coordinates. They are handled the same way.
+
+\textbf{Stations outside NYC.} \NOutsideNYC\ stations fall outside every NYC neighborhood. They are Jersey City and
+Hoboken docks that some NYC trips ended at. They stay out of the map, and those trips count as leaving NYC.
+
+\textbf{Dock capacity.} The GBFS feed lists today's stations, not 2025's. \NCapMissingNYC\ NYC stations still have no
+capacity after matching. \NCapZero\ of them are listed with zero docks (probably closed or temporary), and
+\NCapNotInFeed\ are no longer in the feed. A few are busy, such as West St \& Chambers St. These stations stay on the map in grey,
+labeled ``no dock data'', and get no color.
+
+\subsection{What our imbalance measure shows, and what it doesn't (feedback point 2)}
+
+For each station and hour we compute \textbf{net trip flow} = arrivals $-$ departures, averaged over the
+\NWeekdays\ weekdays (or \NWeekends\ weekend days), and divide by the number of docks. Adding it up from midnight gives
+the \textbf{cumulative net trips per dock} at each hour. A value of $-0.8$ at 10:00 means that, on an average
+weekday, riders took 0.8 more bikes per dock out of the station than they brought back since midnight.
+
+This measures \emph{trips}, not how many bikes were at the station. Our own data shows the gap clearly. By 10:00 on
+weekdays, North Moore St \& Greenwich St in Tribeca gains 3.65 bikes per dock through trips
+(Table~\ref{tab:q2extremes}). That is far more bikes than the station can hold, so staff must be taking bikes away
+(by rebalancing or valet service). Rebalancing trips are not in the public data. So we will say a station
+``loses (or gains) bikes through riders' trips'', never that it is ``empty'' or ``full'', and the map will carry a note
+saying so.
+
+\section{Domain questions: processed data and sketches}
+
+For each question we give the unit of observation, the transformation, a sample of the processed table, and our
+sketch. Across all views: panels that are compared share one scale, missing data is drawn as its own grey category,
+and every color difference is also shown another way (shape, line style or position).
+
+\subsection*{Q1. When do people ride, and how do members and casual riders differ?}
+\textbf{Unit:} day of week $\times$ hour $\times$ rider type.
+\textbf{Transformation:} count trips by start hour and weekday, then divide by how many times that weekday appears in
+the three months to get trips per day.
+\textbf{What the sample shows:} on weekdays members have two peaks, about 9,200 trips in the 8:00 hour and 11,000 at
+17:00. Casual riders barely have a morning peak (about 900 at 8:00) but rise in the evening.
+\textbf{View:} two heatmaps side by side (members, casual riders), hour across and day of week down. Color is each
+hour's share of that group's weekly trips, so the shapes can be compared even though members take 83\% of all trips.
+Panel titles give trips per day. Hovering a cell shows the exact count.
+
+\begin{table}[H]\centering
+\datatable{q1_sample}
+\caption{Sample of \texttt{hourly\_profile.csv} (Wednesday and Saturday at 8:00 and 17:00). The full table has 336 rows.}
+\end{table}
+\sketch{q1}{Q1 sketch: hour $\times$ weekday heatmaps for members and casual riders.}
+
+\subsection*{Q2. Where and when do stations gain or lose bikes through trips?}
+\changed{merges old Q2 and Q3 into one map; the measure is now explicitly a trip measure, normalized by docks.}
+
+\textbf{Unit:} station $\times$ weekday/weekend $\times$ hour (2,378 stations $\times$ 48).
+\textbf{Transformation:} departures are counted at the start station and start hour, and arrivals at the end
+station and end hour. Both are divided by the number of days. Net and cumulative net are then divided by the number
+of docks. Every station has all 24 hours, so hours with no trips appear as zero instead of disappearing.
+\textbf{What the sample shows:} the busiest station, W 21 St \& 6 Ave (74 docks), gains about 0.66 bikes per dock
+through trips by noon on weekdays. Across all stations with dock data, 91 lose more than half a bike per dock by
+10:00 and 79 gain more than that. The top losers are in residential areas such as the Upper East Side and Greenpoint.
+\textbf{View:} a map of stations colored on a diverging scale centered at zero (red = losing, blue = gaining, legend
+in net trips per dock). Losing stations are drawn as downward triangles and gaining ones as upward triangles, so
+direction doesn't depend on color. Stations with no dock data are grey hollow circles. An hour slider and a
+weekday/weekend toggle sit above the map. Clicking a station opens a bar chart of its departures and arrivals by
+hour, with a line for cumulative net per dock.
+
+\begin{table}[H]\centering
+\datatable{q2_sample}
+\caption{Sample of \texttt{station\_hour.csv}: the busiest station, weekday mornings (per average weekday).}
+\end{table}
+
+\begin{table}[H]\centering
+\datatable{q2_extremes}
+\caption{Stations with at least 15 docks that lose or gain the most bikes per dock through trips by 10:00 on an
+average weekday.}\label{tab:q2extremes}
+\end{table}
+\sketch{q2}{Q2 sketch: net-flow map with hour slider and weekday/weekend toggle, and the hourly profile shown when a station is selected.}
+
+\subsection*{Q3. Where do the trips behind that imbalance come from?}
+\changed{we dropped the East River crossings as the focus because they are only about 6.5\% of weekday morning trips
+(Table~\ref{tab:q3shares}). Crossings are now a filter, and the question covers all neighborhood-to-neighborhood flows.}
+
+\textbf{Unit:} start neighborhood $\times$ end neighborhood $\times$ time period (weekday 7--10, weekday 16--19, other
+weekday hours, weekend).
+\textbf{Transformation:} join each trip's start and end station to its 2020 neighborhood and borough, count trips per
+pair and period, divide by the number of days, and flag pairs that cross a borough line or the East River.
+\textbf{What the sample shows:} about 70\% of trips go to a different neighborhood in the same borough and 21\% stay in
+the same neighborhood. The busiest morning flows are short hops into Midtown, from Chelsea-Hudson Yards, Hell's
+Kitchen and Murray Hill. On weekday mornings Brooklyn sends about 1,040 trips per day into Manhattan, against about
+15,200 trips within Manhattan.
+\textbf{View:} a borough-to-borough matrix on the left and a map of the busiest neighborhood flows on the right. Flows
+are curved lines whose width is trips per day. East River crossings are solid and other lines dashed. A period
+selector changes both views, and clicking a neighborhood keeps only its flows. Selecting a station in Q2 highlights
+its neighborhood here.
+
+\begin{table}[H]\centering
+\datatable{q3_shares}
+\caption{Where trips go, by period (trips with a known start and end neighborhood). ``Same borough'' means a
+different neighborhood in the same borough.}\label{tab:q3shares}
+\end{table}
+
+\begin{table}[H]\centering
+\datatable{q3_sample}
+\caption{Sample of \texttt{od\_nta.csv}: the busiest pairs of different neighborhoods, weekday 7--10.}
+\end{table}
+
+\begin{table}[H]\centering
+\datatable{q3_boroughs}
+\caption{Weekday 7--10 trips per day between boroughs (rows: start, columns: end).}
+\end{table}
+\sketch{q3}{Q3 sketch: borough matrix and neighborhood flow map with period selector.}
+
+\subsection*{Q4. How much do weather and season change ridership?}
+\changed{uses three months (January, July, October) instead of the full year.}
+
+\textbf{Unit:} one day (93 days).
+\textbf{Transformation:} count trips per day by rider type and bike type, then join that day's high temperature, rain
+and snow from Central Park by date. Holidays are flagged so they aren't mistaken for weather effects.
+\textbf{What the data shows:} an average day had about 68,500 trips in January, 160,600 in July and 152,500 in October.
+On rainy weekdays (0.1 inch or more), members rode at 88\% of their usual level for that month, but casual riders
+dropped to 68\%.
+\textbf{View:} a calendar heatmap of daily trips for the three months (weeks across, days of the week down, holidays
+outlined). Below it, two scatter plots share one y-axis: members and casual riders, each showing trips as a percent
+of that group's monthly average against the day's high temperature. Rainy days are filled dots and dry days hollow.
+
+\begin{table}[H]\centering
+\datatable{q4_sample}
+\caption{Sample of \texttt{daily.csv} (first ten days of January; Jan 1 is a holiday).}
+\end{table}
+\sketch{q4}{Q4 sketch: calendar heatmap and trips vs.\ temperature for members and casual riders.}
+
+\subsection*{Q5 (optional). Do e-bike trips differ from classic-bike trips?}
+\textbf{Unit:} bike type $\times$ rider type (summary), and bike type $\times$ 0.25 km distance bin (histogram).
+\textbf{Transformation:} straight-line distance between start and end coordinates, which is shorter than the real route.
+\textbf{What the data shows:} e-bikes carry about 71\% of trips. For members, the median e-bike trip covers 1.63 km
+against 1.06 km on a classic bike, and takes only about one minute longer.
+\textbf{View:} overlaid step histograms of trip distance, solid for e-bikes and dashed for classic bikes, with the
+medians marked.
+
+\begin{table}[H]\centering
+\datatable{q5_sample}
+\caption{\texttt{bike\_type\_summary.csv}. ``No end station'' is the share of trips without an end station.}
+\end{table}
+\sketch{q5}{Q5 sketch (optional): trip distance by bike type.}
+
+\section*{AI use}
+{\small
+We used Claude (Anthropic) to help write the two data scripts in our repository's \texttt{scripts/} folder
+(\texttt{download.py} and \texttt{build.py}), to run the first data checks, and to draft parts of this report's
+text. We reviewed and ran the code, checked the outputs against the raw files, and edited the text, and we can
+explain every step. The sketches are our own drawings, made without AI. The same statement is in the repository's
+README.
+}
+
+\end{document}
