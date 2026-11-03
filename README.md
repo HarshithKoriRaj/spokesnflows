@@ -33,7 +33,7 @@ data/processed/         small CSV tables the visualizations read (committed, ~10
 report/milestone2.tex   Milestone 2 report; tables and numbers come from report/tables/
 report/milestone2.pdf   compiled report
 report/tables/          LaTeX tables + numbers written by build.py
-sketches/               our hand-drawn sketches (q1 ... q5) and the brief we drew them from
+sketches/               our hand-drawn sketches (q1.jpg ... q5.jpg) and a short description of each
 ```
 
 ## How to run
@@ -105,9 +105,7 @@ None yet. Links will be added here for Milestone 3, along with what each noteboo
 
 We used Claude (Anthropic) to help write `scripts/download.py` and `scripts/build.py`, to run the first data checks,
 and to draft parts of the report text. We reviewed and ran the code, checked the outputs against the raw files, and
-edited the text, and we can explain every step. Claude also made reference mockups of each view from our processed
+edited the text. Claude also made reference mockups of each view from our processed
 data; the sketches in `sketches/` are drawn by hand by us, using those mockups as a guide.
 
-## Course staff access
 
-This repository is private and shared with GitHub users `ctsilva` and `kimryan0416`.
