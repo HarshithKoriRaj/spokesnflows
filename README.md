@@ -1,7 +1,7 @@
 # Spokes & Flows: How New York Moves on Citi Bike
 
 Team 2, CS-GY 6313 B Information Visualization (Fall 2026, NYU Tandon)
-Harshith Kori Raj (hk4488) · Lakshmi Hukunda Raju (lh41410)
+Harshith Kori Raj (hk4488) · Lakshmi Hukunda Raju (lh4140)
 
 We look at 11.8 million Citi Bike trips from January, July and October 2025 and ask one main question:
 **where does the system struggle, and when?** The views show when people ride, which stations lose or gain
@@ -45,7 +45,7 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
 python scripts/download.py     # January, July, October 2025 + station, neighborhood and weather files
-python scripts/build.py        # about 1 minute; writes data/processed/ and report/tables/
+python scripts/build.py        # about a minute; writes data/processed/ and report/tables/
 ```
 
 To build the report PDF (needs a LaTeX install, or upload `report/` to Overleaf together with `sketches/`):
@@ -54,8 +54,10 @@ To build the report PDF (needs a LaTeX install, or upload `report/` to Overleaf 
 cd report && latexmk -pdf milestone2.tex
 ```
 
-`build.py` processes whatever trip zips are in `data/raw/trips/`, so a different set of months only needs
-`python scripts/download.py --months ...` and a rerun.
+`build.py` converts each trip zip in `data/raw/trips/` to Parquet once (cached in `data/interim/parquet/`) and then
+uses every Parquet file there. To use different months, run `python scripts/download.py --months ...` and rerun
+`build.py`; for a year other than 2025, pass `--year` to both scripts. Rerunning on the same files gives identical
+output.
 
 ## Data access
 
@@ -75,21 +77,25 @@ browser and save each file under the name in the last column. Citi Bike data is 
 | File | One row is | Rows | Used by |
 |------|------------|------|---------|
 | `hourly_profile.csv` | day of week × hour × rider type | 336 | Q1 |
-| `station_hour.csv` | station × weekday/weekend × hour: departures, arrivals and net per day, net per dock, cumulative net per dock | 114,144 | Q2 |
-| `stations.csv` | station: name, location, docks, neighborhood, borough, first seen | 2,378 | Q2, Q3 |
-| `od_nta.csv` | start neighborhood × end neighborhood × period, with borough and East River flags | 32,054 | Q3 |
+| `station_hour.csv` | station × weekday/weekend × hour: departures, arrivals and net per day, net per dock, cumulative net per dock | 109,056 | Q2 |
+| `stations.csv` | station: name, location, docks, neighborhood, borough, first seen | 2,272 | Q2, Q3 |
+| `od_nta.csv` | start neighborhood × end neighborhood × period, with borough and East River flags | 32,019 | Q3 |
 | `daily.csv` | day: trips by rider and bike type, weather, holiday flag | 93 | Q4 |
 | `bike_type_summary.csv`, `distance_hist.csv` | bike type × rider type; distance histogram | 4 / 66 | Q5 |
-| `data_quality.csv` | counts for every cleaning check | 18 | report |
+| `data_quality.csv` | counts for every cleaning check | 24 | report |
 
 **Cleaning rules:**
 
 - Keep trips that start in the downloaded months.
 - Drop trips longer than 3 hours. The operator already removes trips under 60 seconds.
-- Trips with no end station (0.32%, almost all without end coordinates either) are kept for Q1 and Q4 and left
-  out of the station and neighborhood views.
-- 68 Jersey City / Hoboken stations reached from NYC are left off the map.
-- Stations with no dock data (67 in NYC) are kept and shown as "no data".
+- Drop trips to or from Citi Bike's own depots, workshops and test docks (about 2,800 trips).
+- Fix station IDs written two ways (e.g. `7154.1` and `7154.10`, or a trailing `_`) so each dock has one ID.
+- Group public holidays with weekends.
+- Trips with no end station (0.26% of cleaned trips, almost none with end coordinates) are kept for Q1 and Q4 and
+  left out of the station and neighborhood views.
+- 66 Jersey City / Hoboken stations reached from NYC are left off the map.
+- Stations with no dock data (59 in NYC) are kept and shown as "no data".
+- In `distance_hist.csv` the last bin, 8, means 8 km or more.
 
 ## Observable notebooks
 
@@ -99,7 +105,8 @@ None yet. Links will be added here for Milestone 3, along with what each noteboo
 
 We used Claude (Anthropic) to help write `scripts/download.py` and `scripts/build.py`, to run the first data checks,
 and to draft parts of the report text. We reviewed and ran the code, checked the outputs against the raw files, and
-edited the text, and we can explain every step. The sketches in `sketches/` are our own drawings, made without AI.
+edited the text, and we can explain every step. Claude also made reference mockups of each view from our processed
+data; the sketches in `sketches/` are drawn by hand by us, using those mockups as a guide.
 
 ## Course staff access
 

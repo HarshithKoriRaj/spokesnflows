@@ -14,6 +14,7 @@ All heavy work runs in DuckDB so the full year fits on a laptop.
 import argparse
 import json
 import math
+import os
 import shutil
 import zipfile
 from pathlib import Path
@@ -208,17 +209,38 @@ def main():
     for d in (INTERIM, OUT, TEX):
         d.mkdir(parents=True, exist_ok=True)
 
-    # In-memory database; DuckDB spills to disk on its own if memory runs short.
+    # In-memory database capped at half the machine's RAM; DuckDB spills to disk past that,
+    # so the full pipeline also runs on small laptops.
     con = duckdb.connect()
     con.execute(f"SET temp_directory='{INTERIM / 'duckdb_tmp'}'")
+    try:
+        ram_gb = os.sysconf("SC_PAGE_SIZE") * os.sysconf("SC_PHYS_PAGES") / 1e9
+        con.execute(f"SET memory_limit='{max(1.0, ram_gb / 2):.1f}GB'")
+    except (ValueError, OSError, AttributeError):
+        pass
+    con.execute("SET preserve_insertion_order=false")
 
     print("1/7 Converting trip zips to Parquet (first run only)")
     files = trips_to_parquet(con)
 
     print("2/7 Loading trips into DuckDB")
-    con.execute(f"CREATE OR REPLACE TABLE raw AS SELECT * FROM read_parquet({files}, union_by_name=true)")
+    # A view, not a table: trips are read straight from the Parquet files when needed.
+    con.execute(f"CREATE OR REPLACE VIEW raw AS SELECT * FROM read_parquet({files}, union_by_name=true)")
 
     print("3/7 Cleaning and counting problems")
+    # Station IDs look like 7154.10, but some rows lose the trailing zero (7154.1) or gain a
+    # trailing underscore (5303.06_). Normalize them so each dock has one ID.
+    con.execute(r"""CREATE OR REPLACE MACRO norm_id(x) AS (
+        CASE WHEN NULLIF(rtrim(trim(x), '_'), '') IS NULL THEN NULL
+             WHEN regexp_matches(rtrim(trim(x), '_'), '^[0-9]+\.[0-9]$') THEN rtrim(trim(x), '_') || '0'
+             ELSE rtrim(trim(x), '_') END)""")
+    # Citi Bike's own depots, workshops and test docks are not public stations.
+    con.execute(r"""CREATE OR REPLACE MACRO is_internal(id, nm) AS (
+        coalesce(upper(id) LIKE 'SYS%' OR upper(nm) LIKE 'SYS%' OR lower(nm) LIKE '%charging%'
+                 OR lower(nm) LIKE 'shop %' OR lower(nm) LIKE 'lab - %' OR lower(nm) LIKE '%demo%'
+                 OR lower(nm) LIKE '%test%', false))""")
+    hol_list = ", ".join(f"DATE '{h}'" for h in HOLIDAYS_2025) if year == 2025 else "NULL"
+    con.execute(f"CREATE OR REPLACE MACRO is_holiday(dt) AS (coalesce(CAST(dt AS DATE) IN ({hol_list}), false))")
     # Only keep trips that start in a month we downloaded. Each monthly file also
     # holds a few trips that began the evening before the month started.
     file_months = sorted({Path(f).name[:6] for f in files if Path(f).name[:4] == str(year)})
@@ -227,8 +249,10 @@ def main():
         WITH r AS (
             SELECT *,
                    date_diff('second', started_at, ended_at) / 60.0 AS dur,
-                   NULLIF(trim(start_station_id), '') AS sid,
-                   NULLIF(trim(end_station_id), '')   AS eid
+                   norm_id(start_station_id) AS sid,
+                   norm_id(end_station_id)   AS eid,
+                   NULLIF(trim(start_station_id), '') AS sid_raw,
+                   NULLIF(trim(end_station_id), '')   AS eid_raw
             FROM raw)
         SELECT
           count(*)                                                      AS rows_raw,
@@ -242,7 +266,10 @@ def main():
           count(*) FILTER (eid IS NULL AND rideable_type = 'classic_bike')  AS no_end_station_classic,
           count(*) FILTER (end_lat IS NULL OR end_lng IS NULL)          AS no_end_coords,
           count(*) FILTER (eid IS NULL AND end_lat IS NOT NULL)         AS no_end_station_but_coords,
-          count(*) FILTER (sid IS NOT NULL AND sid = eid)               AS round_trips
+          count(*) FILTER (sid IS NOT NULL AND sid = eid)               AS round_trips,
+          count(*) FILTER (sid IS DISTINCT FROM sid_raw OR eid IS DISTINCT FROM eid_raw) AS ids_normalized,
+          count(*) FILTER (is_internal(sid, start_station_name) OR is_internal(eid, end_station_name)) AS internal_station,
+          count(*) FILTER (eid IS NULL AND {in_months} AND dur BETWEEN {MIN_DURATION_MIN} AND {MAX_DURATION_MIN}) AS no_end_station_kept
         FROM r
     """).df().iloc[0]
     quality = {k: int(v) for k, v in q.items()}
@@ -251,8 +278,8 @@ def main():
         CREATE OR REPLACE TABLE trips_filtered AS
         SELECT ride_id, rideable_type, member_casual, started_at, ended_at,
                date_diff('second', started_at, ended_at) / 60.0          AS duration_min,
-               NULLIF(trim(start_station_id), '') AS s_id, start_station_name AS s_name,
-               NULLIF(trim(end_station_id), '')   AS e_id, end_station_name   AS e_name,
+               norm_id(start_station_id) AS s_id, start_station_name AS s_name,
+               norm_id(end_station_id)   AS e_id, end_station_name   AS e_name,
                start_lat AS s_lat, start_lng AS s_lng, end_lat AS e_lat, end_lng AS e_lng,
                CASE WHEN end_lat IS NULL THEN NULL ELSE
                  2 * 6371 * asin(sqrt(
@@ -262,13 +289,19 @@ def main():
                CAST(started_at AS DATE)                                   AS d,
                hour(started_at)                                           AS h,
                isodow(started_at)                                         AS dow,
-               CASE WHEN isodow(started_at) >= 6 THEN 'weekend' ELSE 'weekday' END AS day_type,
+               is_holiday(started_at)                                     AS holiday,
+               -- public holidays behave like weekends, so they are grouped with them
+               CASE WHEN isodow(started_at) >= 6 OR is_holiday(started_at) THEN 'weekend'
+                    ELSE 'weekday' END                                    AS day_type,
                hour(ended_at)                                             AS e_h,
-               CASE WHEN isodow(ended_at) >= 6 THEN 'weekend' ELSE 'weekday' END   AS e_day_type
+               CASE WHEN isodow(ended_at) >= 6 OR is_holiday(ended_at) THEN 'weekend'
+                    ELSE 'weekday' END                                    AS e_day_type
         FROM raw
         WHERE {in_months}
           AND date_diff('second', started_at, ended_at) / 60.0
               BETWEEN {MIN_DURATION_MIN} AND {MAX_DURATION_MIN}
+          AND NOT is_internal(norm_id(start_station_id), start_station_name)
+          AND NOT is_internal(norm_id(end_station_id), end_station_name)
     """)
     con.execute("CREATE OR REPLACE TABLE trips AS SELECT * FROM trips_filtered")
     if quality["duplicate_ids"]:
@@ -295,9 +328,8 @@ def main():
           FROM trips WHERE e_id IS NOT NULL)
         SELECT station_id,
                mode(name) AS name,
-               -- classic bikes report the dock's own position; e-bikes report GPS
-               coalesce(median(lat) FILTER (rideable_type = 'classic_bike'), median(lat)) AS lat,
-               coalesce(median(lng) FILTER (rideable_type = 'classic_bike'), median(lng)) AS lng,
+               median(lat) AS lat,
+               median(lng) AS lng,
                min(d) AS first_seen,
                sum(dep)::BIGINT AS departures,
                sum(arr)::BIGINT AS arrivals
@@ -353,10 +385,12 @@ def main():
 
     print("6/7 Hourly rhythm (Q1), neighborhood flows (Q3), daily + weather (Q4), bike types (Q5)")
     hourly = con.execute("""
-        WITH days AS (SELECT dow, count(DISTINCT d) AS n_days FROM trips GROUP BY dow)
+        -- public holidays are left out so they don't pull down their weekday
+        WITH days AS (SELECT dow, count(DISTINCT d) AS n_days FROM trips WHERE NOT holiday GROUP BY dow)
         SELECT t.dow, dayname(min(t.d)) AS day_name, t.h AS hour, t.member_casual AS rider_type,
                count(*) AS trips, count(*) / any_value(days.n_days) AS trips_per_day
         FROM trips t JOIN days USING (dow)
+        WHERE NOT t.holiday
         GROUP BY t.dow, t.h, t.member_casual ORDER BY 1, 3, 4
     """).df()
     hourly.round(2).to_csv(OUT / "hourly_profile.csv", index=False)
@@ -452,6 +486,11 @@ def write_report_tables(con, q, months, ndays, stations, sh, hourly, od, daily, 
         "NoEndWithCoordsN": f"{q['no_end_station_but_coords']:,}",
         "NoStartStationN": f"{q['no_start_station']:,}",
         "NOutsideNYC": f"{q['stations_no_nta']:,}",
+        "NoEndKeptN": f"{q['no_end_station_kept']:,}",
+        "NoEndKeptPct": f"{100 * q['no_end_station_kept'] / q['rows_clean']:.2f}",
+        "NoEndDroppedLongN": f"{q['no_end_station'] - q['no_end_station_kept']:,}",
+        "NIdsFixed": f"{q['ids_normalized']:,}",
+        "NInternal": f"{q['internal_station']:,}",
         "NCapMissingNYC": f"{q.get('capacity_missing_in_nyc', 0):,}",
         "NCapZero": f"{q.get('capacity_missing_zero_docks_in_feed', 0):,}",
         "NCapNotInFeed": f"{q.get('capacity_missing_not_in_feed', 0):,}",
@@ -465,12 +504,15 @@ def write_report_tables(con, q, months, ndays, stations, sh, hourly, od, daily, 
         ("Duplicate ride IDs", q["duplicate_ids"], "dropped (kept first)"),
         (f"Shorter than {MIN_DURATION_MIN} min", q["too_short"], "dropped"),
         (f"Longer than {MAX_DURATION_MIN} min", q["too_long"], "dropped"),
+        ("Station ID written two ways (7154.1 / 7154.10)", q["ids_normalized"], "ID fixed"),
+        ("To or from a Citi Bike depot or test dock", q["internal_station"], "dropped"),
         ("No start station ID", q["no_start_station"], "kept; not in station views"),
-        ("No end station ID", q["no_end_station"], "kept; not in station views"),
+        ("No end station ID", q["no_end_station"], "see below"),
         ("\\quad of which e-bikes", q["no_end_station_ebike"], ""),
         ("\\quad of which classic bikes", q["no_end_station_classic"], ""),
         ("\\quad with end coordinates", q["no_end_station_but_coords"], ""),
-        ("Round trips (same start and end)", q["round_trips"], "kept, flagged"),
+        ("\\quad still in data after cleaning", q["no_end_station_kept"], "kept; not in station views"),
+        ("Round trips (same start and end)", q["round_trips"], "kept"),
         ("Trips after cleaning", q["rows_clean"], "--"),
     ]
     lines = [r"\begin{tabular}{lrrl}", r"\toprule",
@@ -521,7 +563,7 @@ def write_report_tables(con, q, months, ndays, stations, sh, hourly, od, daily, 
     rows = []
     for per, label in [("weekday_am_peak", "Weekday 7--10"), ("weekday_pm_peak", "Weekday 16--19"),
                        ("weekend", "Weekend (all day)")]:
-        o = od[od.period == per]
+        o = od[(od.period == per) & od.start_nta.notna() & od.end_nta.notna()]
         t = o.trips_per_day.sum()
         same = o[o.start_nta == o.end_nta].trips_per_day.sum()
         cross_b = o[o.crosses_borough == True].trips_per_day.sum()
@@ -551,7 +593,35 @@ def write_report_tables(con, q, months, ndays, stations, sh, hourly, od, daily, 
     s["rideable_type"] = s["rideable_type"].str.replace("_bike", "")
     s.columns = ["bike", "rider", "trips", "median min", "median km", "90th pct km",
                  "no end station"]
+    s["no end station"] = 100 * s["no end station"]
+    s = s.rename(columns={"no end station": "no end station %"})
     write_tex_table(s, "q5_sample", "llrrrrr")
+
+    hist = con.execute("""
+        SELECT rideable_type, least(floor(dist_km / 0.25) * 0.25, 8) AS bin, count(*) AS n
+        FROM trips WHERE dist_km IS NOT NULL GROUP BY ALL ORDER BY 1, 2""").df()
+    hist["share"] = 100 * hist.n / hist.groupby("rideable_type").n.transform("sum")
+    hist["rideable_type"] = hist["rideable_type"].str.replace("_bike", "")
+    hist["bin"] = hist["bin"].map(lambda b: "8+ km" if b >= 8 else f"{b:.2f}--{b + 0.25:.2f} km")
+    h = hist[hist.groupby("rideable_type").cumcount() < 4][["rideable_type", "bin", "n", "share"]]
+    h.columns = ["bike", "distance bin", "trips", "share of that bike's trips %"]
+    write_tex_table(h, "q5_hist_sample", "llrr", {"share of that bike's trips %": 1})
+
+    # Q4: rain effect on ordinary weekdays (no weekends, no holidays), against that month's
+    # average ordinary weekday
+    wd = daily[(daily.day_type == "weekday") & ~daily.holiday].copy()
+    wd["month"] = pd.to_datetime(wd["date"]).dt.month
+    wd["rain"] = wd.precip_in >= 0.1
+    rain = {}
+    for c in ("member_trips", "casual_trips"):
+        pctv = 100 * wd[c] / wd.groupby("month")[c].transform("mean")
+        rain[c] = (pctv[wd.rain].mean(), pctv[~wd.rain].mean())
+    extra = {"NRainyWeekdays": str(int(wd.rain.sum())),
+             "RainMemberPct": f"{rain['member_trips'][0]:.0f}", "DryMemberPct": f"{rain['member_trips'][1]:.0f}",
+             "RainCasualPct": f"{rain['casual_trips'][0]:.0f}", "DryCasualPct": f"{rain['casual_trips'][1]:.0f}"}
+    with open(TEX / "meta.tex", "a") as f:
+        for k, v in extra.items():
+            f.write(rf"\renewcommand{{\{k}}}{{{v}}}" + "\n")
 
 
 if __name__ == "__main__":

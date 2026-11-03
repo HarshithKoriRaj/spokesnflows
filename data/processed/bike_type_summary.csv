@@ -1,5 +1,5 @@
 rideable_type,rider_type,trips,median_min,median_km,p90_km,share_no_end_station
-classic_bike,casual,489347,14.7,1.521,3.813,0.0
-classic_bike,member,2985142,7.467,1.058,3.129,0.0
-electric_bike,casual,1555785,11.717,1.77,4.55,0.005
-electric_bike,member,6796672,8.45,1.631,4.424,0.003
+classic_bike,casual,489333,14.7,1.521,3.813,0.0
+classic_bike,member,2984609,7.467,1.058,3.129,0.0
+electric_bike,casual,1555672,11.717,1.77,4.55,0.005
+electric_bike,member,6794555,8.45,1.631,4.423,0.003

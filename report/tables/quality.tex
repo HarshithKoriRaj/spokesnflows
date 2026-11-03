@@ -7,18 +7,21 @@ Started outside the downloaded months & 1,626 & 0.01 & dropped \\
 Duplicate ride IDs & 0 & 0.00 & dropped (kept first) \\
 Shorter than 1 min & 0 & 0.00 & dropped \\
 Longer than 180 min & 16,130 & 0.14 & dropped \\
+Station ID written two ways (7154.1 / 7154.10) & 171,362 & 1.45 & ID fixed \\
+To or from a Citi Bike depot or test dock & 2,779 & 0.02 & dropped \\
 No start station ID & 6,704 & 0.06 & kept; not in station views \\
-No end station ID & 37,704 & 0.32 & kept; not in station views \\
+No end station ID & 37,704 & 0.32 & see below \\
 \quad of which e-bikes & 35,368 & 0.30 &  \\
 \quad of which classic bikes & 2,336 & 0.02 &  \\
 \quad with end coordinates & 38 & 0.00 &  \\
-Round trips (same start and end) & 228,940 & 1.93 & kept, flagged \\
-Trips after cleaning & 11,826,946 & 99.85 & -- \\
+\quad still in data after cleaning & 30,361 & 0.26 & kept; not in station views \\
+Round trips (same start and end) & 230,819 & 1.95 & kept \\
+Trips after cleaning & 11,824,169 & 99.83 & -- \\
 \midrule
-Stations found in trips & 2,378 & & \\
-\quad capacity matched by ID & 2,185 & & \\
-\quad capacity matched by location & 123 & & within 75 m \\
-\quad capacity missing & 70 & & shown as ``no data'' \\
-\quad outside any NYC neighborhood & 68 & & \\
+Stations found in trips & 2,272 & & \\
+\quad capacity matched by ID & 2,182 & & \\
+\quad capacity matched by location & 30 & & within 75 m \\
+\quad capacity missing & 60 & & shown as ``no data'' \\
+\quad outside any NYC neighborhood & 66 & & \\
 \bottomrule
 \end{tabular}
