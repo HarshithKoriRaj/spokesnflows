@@ -19,7 +19,7 @@ https://github.com/<your-username>/<your-repo>/blob/main/milestone3/index.html
 or, if you prefer to run it locally for testing:
 
 ```bash
-cd /Users/lakshmihr/Desktop/spokesnflows
+cd /path/to/spokesnflows
 python3 -m http.server 8000
 ```
 

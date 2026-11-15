@@ -111,7 +111,7 @@ To open the milestone page from the repository after pushing to GitHub, open the
 For local testing only, you can also run:
 
 ```bash
-cd /Users/lakshmihr/Desktop/spokesnflows
+cd /path/to/spokesnflows
 python3 -m http.server 8000
 ```
 
