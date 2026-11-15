@@ -8,16 +8,22 @@ This folder contains the Milestone 3 write-up and a runnable first-draft D3 view
 - `styles.css` – page styling
 - `charts.js` – D3 rendering logic and data loading
 
-## Run locally
+## Open the milestone page
 
-From the repository root:
+This write-up is intended to be viewed from the repository itself. After pushing to GitHub, open:
+
+```text
+https://github.com/<your-username>/<your-repo>/blob/main/milestone3/index.html
+```
+
+or, if you prefer to run it locally for testing:
 
 ```bash
 cd /Users/lakshmihr/Desktop/spokesnflows
 python3 -m http.server 8000
 ```
 
-Then open:
+Then visit:
 
 ```text
 http://localhost:8000/milestone3/index.html

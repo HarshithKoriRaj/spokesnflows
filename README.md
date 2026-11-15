@@ -106,7 +106,9 @@ The repository now includes a browser-based milestone write-up and interactive D
 - `milestone3/styles.css` – page styling
 - `milestone3/README.md` – local run instructions
 
-To open the milestone page locally:
+To open the milestone page from the repository after pushing to GitHub, open the file in the repo at `milestone3/index.html`.
+
+For local testing only, you can also run:
 
 ```bash
 cd /Users/lakshmihr/Desktop/spokesnflows
