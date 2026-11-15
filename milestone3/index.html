@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spokes & Flows — Milestone 3</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="container">
+        <p class="eyebrow">Team 2 · CS-GY 6313 B</p>
+        <h1>Spokes & Flows: Milestone 3</h1>
+        <p class="subtitle">
+          A working first-draft D3 narrative for the Citi Bike network-planning questions.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="intro">
+        <p>
+          This first draft uses January, July, and October 2025 trip data to show where Citi Bike systems
+          strain, when riders are active, how trips move between neighborhoods, and how weather relates to
+          ridership. The design keeps the four core questions in a readable narrative and makes station net
+          flow the central comparison.
+        </p>
+      </section>
+
+      <section id="q1" class="question">
+        <div class="question-head">
+          <h2>Q1. When do people ride, and how do members and casual riders differ?</h2>
+        </div>
+        <p>
+          The chart below compares weekday-hour activity by rider type using trips per day. We normalize by the
+          number of times each weekday occurs so the comparison reflects exposure rather than raw volume alone.
+        </p>
+        <div id="q1-chart" class="chart"></div>
+      </section>
+
+      <section id="q2" class="question">
+        <div class="question-head">
+          <h2>Q2. Where and when do stations gain or lose bikes through trips?</h2>
+        </div>
+        <p>
+          The view shows a zero-centered net-flow comparison per station and dock, with the selected hour and
+          day type adjusting the ranking. Negative values mean net losses; positive values mean gains.
+        </p>
+        <div class="toolbar">
+          <label>
+            Day type
+            <select id="q2-day-type">
+              <option value="weekday">Weekday</option>
+              <option value="weekend">Weekend</option>
+            </select>
+          </label>
+          <label>
+            Hour
+            <input id="q2-hour" type="range" min="0" max="23" value="8" />
+            <span id="q2-hour-label">08:00</span>
+          </label>
+        </div>
+        <div id="q2-chart" class="chart"></div>
+      </section>
+
+      <section id="q3" class="question">
+        <div class="question-head">
+          <h2>Q3. Where do the trips behind that imbalance come from?</h2>
+        </div>
+        <p>
+          The flow ranking shows the busiest neighborhood-to-neighborhood trip pairs for each period, helping
+          explain which origins and destinations drive the station imbalances above.
+        </p>
+        <div class="toolbar">
+          <label>
+            Period
+            <select id="q3-period">
+              <option value="weekday_am_peak">Weekday AM peak</option>
+              <option value="weekday_pm_peak">Weekday PM peak</option>
+              <option value="weekday_other">Weekday other hours</option>
+              <option value="weekend">Weekend</option>
+            </select>
+          </label>
+        </div>
+        <div id="q3-chart" class="chart"></div>
+      </section>
+
+      <section id="q4" class="question">
+        <div class="question-head">
+          <h2>Q4. How much do weather and season change ridership?</h2>
+        </div>
+        <p>
+          This scatter plot compares daily high temperature against the number of trips as a percent of that
+          month’s average day. Rainy days are highlighted separately from dry days, and the series are shown by
+          rider type.
+        </p>
+        <div id="q4-chart" class="chart"></div>
+      </section>
+
+      <section id="q5" class="question">
+        <div class="question-head">
+          <h2>Q5 (optional). Do e-bike trips differ from classic-bike trips?</h2>
+        </div>
+        <p>
+          The histogram shows straight-line trip distance by bike type; the final bin, 8 km or more, is kept
+          separate to prevent distortion from the open-ended tail.
+        </p>
+        <div id="q5-chart" class="chart"></div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <div class="container">
+        <p>
+          AI use statement: the team used Claude to help draft data-cleaning logic and chart mockups, while the
+          final implementation and interpretation in this repository were reviewed and revised by the team.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="charts.js"></script>
+  </body>
+</html>

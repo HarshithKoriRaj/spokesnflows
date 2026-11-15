@@ -1,0 +1,170 @@
+:root {
+  --bg: #f6f7fb;
+  --panel: #ffffff;
+  --ink: #1b2430;
+  --muted: #5f6b7a;
+  --line: #d9dde6;
+  --blue: #2b6cb0;
+  --blue-soft: rgba(43, 108, 176, 0.12);
+  --orange: #d97706;
+  --orange-soft: rgba(217, 119, 6, 0.12);
+  --green: #2f8f46;
+  --red: #c0392b;
+  --shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.page-header {
+  background: linear-gradient(135deg, #0f172a, #1d4f91);
+  color: white;
+  padding: 48px 0 28px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 11px;
+  opacity: 0.8;
+  margin: 0 0 8px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.subtitle {
+  margin-top: 12px;
+  max-width: 760px;
+  color: rgba(255,255,255,0.85);
+}
+
+main {
+  padding: 24px 0 40px;
+}
+
+.intro {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+}
+
+.question {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 22px;
+  box-shadow: var(--shadow);
+}
+
+.question-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+}
+
+p {
+  margin: 0 0 12px;
+  color: var(--ink);
+}
+
+.chart {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 10px;
+}
+
+svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.toolbar label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+select, input[type="range"] {
+  accent-color: var(--blue);
+}
+
+.axis text,
+.axis-label,
+.label {
+  font-size: 11px;
+  fill: var(--muted);
+}
+
+.axis path,
+.axis line {
+  stroke: var(--line);
+  shape-rendering: crispEdges;
+}
+
+.legend text {
+  font-size: 11px;
+  fill: var(--muted);
+}
+
+.grid line {
+  stroke: #edf0f5;
+}
+
+.grid path {
+  stroke: none;
+}
+
+.page-footer {
+  padding: 0 0 42px;
+}
+
+.page-footer .container {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+@media (max-width: 700px) {
+  .question {
+    padding: 16px;
+  }
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

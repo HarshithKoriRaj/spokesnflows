@@ -16,10 +16,10 @@ internal_station,2779
 no_end_station_kept,30361
 rows_clean,11824169
 stations,2272
-stations_capacity_by_id,2182
+stations_capacity_by_id,2178
 stations_capacity_by_location,30
-stations_capacity_missing,60
+stations_capacity_missing,64
 stations_no_nta,66
-capacity_missing_in_nyc,59
-capacity_missing_zero_docks_in_feed,26
-capacity_missing_not_in_feed,33
+capacity_missing_in_nyc,63
+capacity_missing_zero_docks_in_feed,29
+capacity_missing_not_in_feed,34

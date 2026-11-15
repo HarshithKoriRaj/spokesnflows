@@ -97,9 +97,23 @@ browser and save each file under the name in the last column. Citi Bike data is 
 - Stations with no dock data (59 in NYC) are kept and shown as "no data".
 - In `distance_hist.csv` the last bin, 8, means 8 km or more.
 
-## Observable notebooks
+## Milestone 3 (first-draft D3 write-up)
 
-None yet. Links will be added here for Milestone 3, along with what each notebook is for.
+The repository now includes a browser-based milestone write-up and interactive D3 views in `milestone3/`.
+
+- `milestone3/index.html` – narrative page with the D3 views for Q1–Q5
+- `milestone3/charts.js` – rendering logic and CSV data loading
+- `milestone3/styles.css` – page styling
+- `milestone3/README.md` – local run instructions
+
+To open the milestone page locally:
+
+```bash
+cd /Users/lakshmihr/Desktop/spokesnflows
+python3 -m http.server 8000
+```
+
+Then visit: `http://localhost:8000/milestone3/index.html`
 
 ## AI use
 

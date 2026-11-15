@@ -23,7 +23,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 2782.02,5 Ave & 67 St,40.635679,-74.020005,2025-01-01,607,603,20.0,gbfs_id,BK1001,Bay Ridge,Brooklyn
 2793.07,Ovington Ave & 3 Ave,40.63487,-74.02625,2025-10-01,370,370,16.0,gbfs_id,BK1001,Bay Ridge,Brooklyn
 2821.05,7 Ave & 62 St,40.63556,-74.01298,2025-01-01,855,863,30.0,gbfs_id,BK0703,Sunset Park (Central),Brooklyn
-2832.03,4 Ave & Shore Road Dr,40.637033,-74.022141,2025-01-01,628,632,20.0,gbfs_id,BK1001,Bay Ridge,Brooklyn
+2832.03,4 Ave & Shore Road Dr,40.637033,-74.022141,2025-01-01,628,632,19.0,gbfs_id,BK1001,Bay Ridge,Brooklyn
 2843.01,Colonial Rd & 68 St,40.63841,-74.03093,2025-10-01,279,293,19.0,gbfs_id,BK1001,Bay Ridge,Brooklyn
 2843.13,70 St & Ridge Blvd,40.63596,-74.02908,2025-10-01,162,161,12.0,gbfs_id,BK1001,Bay Ridge,Brooklyn
 2861.02,57 St & 7 Ave,40.638566,-74.010147,2025-01-01,677,676,22.0,gbfs_id,BK0703,Sunset Park (Central),Brooklyn
@@ -97,8 +97,8 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 3223.07,Ocean Ave & Tennis Ct,40.64873,-73.96084,2025-01-01,1148,1192,23.0,gbfs_id,BK1401,Flatbush,Brooklyn
 3229.07,E 48 St & Tilden Ave,40.64795,-73.93182,2025-01-01,148,189,28.0,gbfs_id,BK1703,East Flatbush-Rugby,Brooklyn
 3230.01,Caton Ave & E 10 St,40.648481,-73.97058,2025-01-01,1937,2000,30.0,gbfs_id,BK1402,Flatbush (West)-Ditmas Park-Parkville,Brooklyn
-3233.02,5 Ave & 44 St,40.64865,-74.00646,2025-01-01,1102,1097,24.0,gbfs_id,BK0703,Sunset Park (Central),Brooklyn
-3240.15,Fort Hamilton Pkwy & E 5 St,40.649037,-73.97673,2025-01-01,2458,2439,,missing,BK0701,Windsor Terrace-South Slope,Brooklyn
+3233.02,5 Ave & 44 St,40.64865,-74.00646,2025-01-01,1102,1097,11.0,gbfs_id,BK0703,Sunset Park (Central),Brooklyn
+3240.15,Fort Hamilton Pkwy & E 5 St,40.649037,-73.97673,2025-01-01,2458,2439,23.0,gbfs_id,BK0701,Windsor Terrace-South Slope,Brooklyn
 3243.02,47 St & 3 Ave,40.649143,-74.012384,2025-01-01,445,449,23.0,gbfs_id,BK0702,Sunset Park (West),Brooklyn
 3246.06,New York Ave & Snyder Ave,40.64868,-73.94635,2025-01-01,319,394,22.0,gbfs_id,BK1701,East Flatbush-Erasmus,Brooklyn
 3253.01,52 St & 1 Ave,40.649292,-74.020105,2025-01-01,490,501,22.0,gbfs_id,BK0702,Sunset Park (West),Brooklyn
@@ -117,7 +117,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 3303.03,Caton Ave & Argyle Rd,40.649681,-73.967829,2025-01-01,1783,1811,21.0,gbfs_id,BK5591,Prospect Park,Brooklyn
 3306.03,5 Ave & 41 St,40.649983,-74.005144,2025-01-01,1995,1963,30.0,gbfs_id,BK0703,Sunset Park (Central),Brooklyn
 3309.04,Church Ave & E 42 St,40.65127,-73.93818,2025-01-01,356,371,25.0,gbfs_id,BK1703,East Flatbush-Rugby,Brooklyn
-3312.07,Prospect Ave & Greenwood Ave,40.651745,-73.975988,2025-01-01,2031,2016,19.0,gbfs_id,BK0701,Windsor Terrace-South Slope,Brooklyn
+3312.07,Prospect Ave & Greenwood Ave,40.651745,-73.975988,2025-01-01,2031,2016,20.0,gbfs_id,BK0701,Windsor Terrace-South Slope,Brooklyn
 3315.05,44 St & 3 Ave,40.651173,-74.011405,2025-01-01,348,349,23.0,gbfs_id,BK0702,Sunset Park (West),Brooklyn
 3318.05,E 34 St & Church Ave,40.65116,-73.94577,2025-01-01,392,407,25.0,gbfs_id,BK1701,East Flatbush-Erasmus,Brooklyn
 3327.01,Lott St & Erasmus St,40.64949,-73.95408,2025-01-01,445,497,19.0,gbfs_id,BK1701,East Flatbush-Erasmus,Brooklyn
@@ -125,7 +125,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 3341.06,Church Ave & E 45 St,40.65159,-73.93535,2025-01-01,251,305,24.0,gbfs_id,BK1703,East Flatbush-Rugby,Brooklyn
 3344.02,Park Circle & East Dr,40.651566,-73.972212,2025-01-01,5706,5837,29.0,gbfs_id,BK5591,Prospect Park,Brooklyn
 3347.03,41 St & 4 Ave,40.651354,-74.007168,2025-01-01,1629,1635,23.0,gbfs_id,BK0702,Sunset Park (West),Brooklyn
-3350.04,E 38 St & Church Ave,40.65106,-73.94193,2025-01-01,418,402,,missing,BK1703,East Flatbush-Rugby,Brooklyn
+3350.04,E 38 St & Church Ave,40.65106,-73.94193,2025-01-01,418,402,24.0,gbfs_id,BK1703,East Flatbush-Rugby,Brooklyn
 3353.04,Greenwood Ave & E 4 St,40.650739,-73.977739,2025-01-01,1512,1514,21.0,gbfs_id,BK0701,Windsor Terrace-South Slope,Brooklyn
 3356.05,44 St & 2 Ave,40.652502,-74.013587,2025-01-01,327,345,19.0,gbfs_id,BK0702,Sunset Park (West),Brooklyn
 3359.01,Church Ave & Nostrand Ave,40.65074,-73.94986,2025-01-01,1110,1170,30.0,gbfs_id,BK1701,East Flatbush-Erasmus,Brooklyn
@@ -134,7 +134,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 3373.01,E 51 St & Linden Blvd,40.65399,-73.92967,2025-01-01,414,447,21.0,gbfs_id,BK1703,East Flatbush-Rugby,Brooklyn
 3376.02,Parade Pl & Crooke Ave,40.651847,-73.965248,2025-01-01,3024,3058,30.0,gbfs_id,BK1401,Flatbush,Brooklyn
 3376.04,Parkside Ave & Parade Pl,40.6532,-73.96639,2025-01-01,2426,2496,22.0,gbfs_id,BK5591,Prospect Park,Brooklyn
-3379.03,5 Ave & 37 St,40.652657,-74.002356,2025-01-01,1481,1524,30.0,gbfs_id,BK0703,Sunset Park (Central),Brooklyn
+3379.03,5 Ave & 37 St,40.652657,-74.002356,2025-01-01,1481,1524,4.0,gbfs_id,BK0703,Sunset Park (Central),Brooklyn
 3382.04,Troy Ave & Linden Blvd,40.6533,-73.93644,2025-01-01,327,336,23.0,gbfs_id,BK1703,East Flatbush-Rugby,Brooklyn
 3385.06,Prospect Park SW & Greenwood Ave,40.652563,-73.972573,2025-01-01,3326,3361,30.0,gbfs_id,BK5591,Prospect Park,Brooklyn
 3388.02,41 St & 3 Ave,40.652512,-74.008906,2025-01-01,386,378,19.0,gbfs_id,BK0702,Sunset Park (West),Brooklyn
@@ -143,7 +143,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 3394.03,McDonald Ave & Vanderbilt St,40.651654,-73.981231,2025-01-01,1107,1107,,missing,BK0771,Green-Wood Cemetery,Brooklyn
 3400.04,Rogers Ave & Lenox Rd,40.65378,-73.95273,2025-01-01,2027,2036,23.0,gbfs_id,BK1701,East Flatbush-Erasmus,Brooklyn
 3408.05,Ocean Ave & Crooke Ave,40.65326,-73.96172,2025-01-01,2046,2064,27.0,gbfs_id,BK1401,Flatbush,Brooklyn
-3420.01,36 St & 4 Ave,40.654144,-74.00422,2025-01-01,3912,3945,30.0,gbfs_id,BK0702,Sunset Park (West),Brooklyn
+3420.01,36 St & 4 Ave,40.654144,-74.00422,2025-01-01,3912,3945,,missing,BK0702,Sunset Park (West),Brooklyn
 3423.10,Clarkson Ave & E 40 St,40.65592,-73.94068,2025-01-01,654,777,30.0,gbfs_id,BK1703,East Flatbush-Rugby,Brooklyn
 3426.02,Prospect Ave & Vanderbilt St,40.653368,-73.976291,2025-01-01,1701,1726,22.0,gbfs_id,BK0701,Windsor Terrace-South Slope,Brooklyn
 3428.02,42 St & 1 Ave,40.654798,-74.014372,2025-01-01,431,443,19.0,gbfs_id,BK0702,Sunset Park (West),Brooklyn
@@ -165,7 +165,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 3498.09,Prospect Park SW & 16 St,40.657265,-73.974165,2025-01-01,3996,3967,33.0,gbfs_id,BK0701,Windsor Terrace-South Slope,Brooklyn
 3501.01,39 St & 2 Ave,40.6553997745,-74.0106278658,2025-10-01,396,423,33.0,gbfs_id,BK0702,Sunset Park (West),Brooklyn
 3504.02,New York Ave & Hawthorne St,40.65794,-73.94735,2025-01-01,714,726,20.0,gbfs_id,BK0902,Prospect Lefferts Gardens-Wingate,Brooklyn
-3507.04,Prospect Park W & 20 St,40.656633,-73.983864,2025-01-01,2187,2054,25.0,gbfs_id,BK0701,Windsor Terrace-South Slope,Brooklyn
+3507.04,Prospect Park W & 20 St,40.656633,-73.983864,2025-01-01,2187,2054,22.0,gbfs_id,BK0701,Windsor Terrace-South Slope,Brooklyn
 3512.03,Winthrop St & Rogers Ave,40.65686,-73.95331,2025-01-01,1866,1880,20.0,gbfs_id,BK0902,Prospect Lefferts Gardens-Wingate,Brooklyn
 3515.01,7 Ave & 22 St,40.658029,-73.989605,2025-01-01,1753,1759,25.0,gbfs_id,BK0771,Green-Wood Cemetery,Brooklyn
 3520.01,Flatbush Ave & Fenimore St,40.65798,-73.96051,2025-01-01,2269,2280,24.0,gbfs_id,BK0902,Prospect Lefferts Gardens-Wingate,Brooklyn
@@ -193,7 +193,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 3620.02,Windsor Pl & 8 Ave,40.660906,-73.983074,2025-01-01,2820,2791,20.0,gbfs_id,BK0701,Windsor Terrace-South Slope,Brooklyn
 3625.04,Bedford Ave & Maple St,40.66035,-73.95679,2025-01-01,1790,1793,23.0,gbfs_id,BK0902,Prospect Lefferts Gardens-Wingate,Brooklyn
 3625.07,Rogers Ave & Lincoln Rd,40.66127,-73.95352,2025-01-01,3022,3017,23.0,gbfs_id,BK0902,Prospect Lefferts Gardens-Wingate,Brooklyn
-3628.11,6 Ave & 21 St,40.66016,-73.990974,2025-01-01,5216,5183,27.0,gbfs_id,BK0702,Sunset Park (West),Brooklyn
+3628.11,6 Ave & 21 St,40.66016,-73.990974,2025-01-01,5216,5183,26.0,gbfs_id,BK0702,Sunset Park (West),Brooklyn
 3633.08,Lincoln Rd & Ocean Ave,40.6605,-73.9626,2025-01-01,7848,7852,23.0,gbfs_id,BK0902,Prospect Lefferts Gardens-Wingate,Brooklyn
 3639.04,Schenectady Ave & Maple St,40.66178,-73.93445,2025-01-01,505,508,19.0,gbfs_id,BK0902,Prospect Lefferts Gardens-Wingate,Brooklyn
 3648.08,Kingston Ave & E New York Ave,40.66219,-73.94293,2025-01-01,1976,1973,21.0,gbfs_id,BK0902,Prospect Lefferts Gardens-Wingate,Brooklyn
@@ -216,7 +216,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 3728.04,Empire Blvd & New York Ave,40.66403,-73.94769,2025-01-01,836,839,23.0,gbfs_id,BK0902,Prospect Lefferts Gardens-Wingate,Brooklyn
 3728.05,New York Ave & Montgomery St,40.66509,-73.94824,2025-01-01,1144,1145,20.0,gbfs_id,BK0901,Crown Heights (South),Brooklyn
 3731.11,14 St & 7 Ave,40.663779,-73.98396846,2025-01-01,8289,8271,24.0,gbfs_id,BK0602,Park Slope,Brooklyn
-3736.03,Bedford Ave & Montgomery St,40.665816,-73.956934,2025-01-01,1987,1924,27.0,gbfs_id,BK0901,Crown Heights (South),Brooklyn
+3736.03,Bedford Ave & Montgomery St,40.665816,-73.956934,2025-01-01,1987,1924,18.0,gbfs_id,BK0901,Crown Heights (South),Brooklyn
 3739.06,4 Ave & 17 St,40.665507,-73.993037,2025-01-01,2089,2117,23.0,gbfs_id,BK0702,Sunset Park (West),Brooklyn
 3742.11,Carroll St & Rochester Ave,40.66598,-73.9284,2025-01-01,1066,1079,21.0,gbfs_id,BK0891,Lincoln Terrace Park,Brooklyn
 3751.05,Crown St & Troy Ave,40.66559,-73.93712,2025-01-01,2318,2305,20.0,gbfs_id,BK0901,Crown Heights (South),Brooklyn
@@ -256,7 +256,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 3902.06,Eastern Pkwy & Kingston Ave,40.66959,-73.94237,2025-01-01,8947,8314,30.0,gbfs_id,BK0802,Crown Heights (North),Brooklyn
 3905.15,3 St & 7 Ave,40.6703837,-73.97839676,2025-01-01,11146,11036,27.0,gbfs_id,BK0602,Park Slope,Brooklyn
 3911.05,Eastern Pkwy & Nostrand Ave,40.66967,-73.9503,2025-01-01,3360,2798,27.0,gbfs_id,BK0901,Crown Heights (South),Brooklyn
-3914.02,7 St & 5 Ave,40.6704922,-73.98541675,2025-01-01,5511,5530,26.0,gbfs_id,BK0602,Park Slope,Brooklyn
+3914.02,7 St & 5 Ave,40.6704922,-73.98541675,2025-01-01,5511,5530,,missing,BK0602,Park Slope,Brooklyn
 3917.03,St Johns Pl & Howard Ave,40.66992,-73.92002,2025-01-01,538,555,21.0,gbfs_id,BK1601,Ocean Hill,Brooklyn
 3919.07,Eastern Pkwy & Franklin Ave (NE Corner),40.6707767,-73.9576801,2025-01-01,10224,9582,42.0,gbfs_id,BK0802,Crown Heights (North),Brooklyn
 3919.12,Eastern Pkwy & Franklin Ave (SW Corner),40.670529,-73.958222,2025-01-01,4748,4474,30.0,gbfs_id,BK0901,Crown Heights (South),Brooklyn
@@ -267,17 +267,17 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 3934.06,Sterling Pl & Schenectady Ave,40.6716,-73.93378,2025-01-01,1116,970,21.0,gbfs_id,BK0802,Crown Heights (North),Brooklyn
 3934.07,Troy Ave & Park Pl,40.67251,-73.93642,2025-01-01,1612,1475,21.0,gbfs_id,BK0802,Crown Heights (North),Brooklyn
 3940.04,Sigourney St & Columbia St,40.67267243410948,-74.0087952464819,2025-01-01,2087,2245,21.0,gbfs_id,BK0601,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Brooklyn
-3943.03,St Johns Pl & Kingston Ave,40.67113,-73.94222,2025-01-01,3130,2978,,missing,BK0802,Crown Heights (North),Brooklyn
+3943.03,St Johns Pl & Kingston Ave,40.67113,-73.94222,2025-01-01,3130,2978,22.0,gbfs_id,BK0802,Crown Heights (North),Brooklyn
 3946.07,1 St & 6 Ave,40.672784,-73.979826,2025-01-01,5595,5501,35.0,gbfs_id,BK0602,Park Slope,Brooklyn
 3950.03,Park Pl & Thomas S. Boyland St,40.67154,-73.91433,2025-01-01,853,818,23.0,gbfs_id,BK1601,Ocean Hill,Brooklyn
 3952.07,Lincoln Pl & Nostrand Ave,40.67077,-73.9507,2025-01-01,4330,3955,25.0,gbfs_id,BK0802,Crown Heights (North),Brooklyn
 3955.05,4 Ave & 9 St,40.6705135,-73.98876585,2025-01-01,6342,6474,31.0,gbfs_id,BK0601,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Brooklyn
 3958.02,Sterling Pl & Ralph Ave,40.67095,-73.92222,2025-01-01,612,594,19.0,gbfs_id,BK1601,Ocean Hill,Brooklyn
 3960.01,Lincoln Pl & Classon Ave,40.6721683,-73.9609,2025-01-01,4786,4565,28.0,gbfs_id,BK0802,Crown Heights (North),Brooklyn
-3966.01,St Johns Pl & Utica Ave,40.6705,-73.9308,2025-01-01,2123,2021,21.0,gbfs_id,BK0802,Crown Heights (North),Brooklyn
+3966.01,St Johns Pl & Utica Ave,40.6705,-73.9308,2025-01-01,2123,2021,6.0,gbfs_id,BK0802,Crown Heights (North),Brooklyn
 3966.03,Park Pl & Utica Ave,40.67242,-73.93094,2025-01-01,1278,1256,21.0,gbfs_id,BK0802,Crown Heights (North),Brooklyn
 3972.08,Henry St & Bay St,40.6725058,-74.00494695,2025-01-01,1413,1544,19.0,gbfs_id,BK0601,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Brooklyn
-3975.02,Albany Ave & Park Pl,40.67297,-73.93896,2025-01-01,1975,1806,,missing,BK0802,Crown Heights (North),Brooklyn
+3975.02,Albany Ave & Park Pl,40.67297,-73.93896,2025-01-01,1975,1806,20.0,gbfs_id,BK0802,Crown Heights (North),Brooklyn
 3978.13,Garfield Pl & 8 Ave,40.6711978,-73.97484126,2025-01-01,8399,8370,25.0,gbfs_id,BK0602,Park Slope,Brooklyn
 3981.10,Dwight St & Van Dyke St,40.67363551341504,-74.01195555925369,2025-01-01,1350,1627,23.0,gbfs_id,BK0601,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Brooklyn
 3982.01,Eastern Pkwy & St Marks Ave,40.67319,-73.91083,2025-01-01,531,536,23.0,gbfs_id,BK1601,Ocean Hill,Brooklyn
@@ -370,7 +370,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 4187.04,Sumpter St & Fulton St,40.67923,-73.92588,2025-01-01,727,722,19.0,gbfs_id,BK0302,Bedford-Stuyvesant (East),Brooklyn
 4190.06,Grand Ave & Bergen St,40.678045,-73.962408,2025-01-01,6610,6481,25.0,gbfs_id,BK0801,Prospect Heights,Brooklyn
 4193.14,1 Pl & Clinton St,40.6809591,-73.99905709,2025-01-01,5696,5501,34.0,gbfs_id,BK0601,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Brooklyn
-4196.01,Lewis Ave & Fulton St,40.67972,-73.93467,2025-01-01,1043,1056,20.0,gbfs_id,BK0302,Bedford-Stuyvesant (East),Brooklyn
+4196.01,Lewis Ave & Fulton St,40.67972,-73.93467,2025-01-01,1043,1056,19.0,gbfs_id,BK0302,Bedford-Stuyvesant (East),Brooklyn
 4196.05,Chauncey St & Stuyvesant Ave,40.68012,-73.93168,2025-01-01,4144,4137,25.0,gbfs_id,BK0302,Bedford-Stuyvesant (East),Brooklyn
 4199.12,Carlton Ave & Dean St,40.6809741,-73.9710097,2025-01-01,14818,14835,29.0,gbfs_id,BK0801,Prospect Heights,Brooklyn
 4199.13,Carlton Ave & St Marks Ave,40.67911856082165,-73.97176265716553,2025-01-01,2052,2045,,missing,BK0801,Prospect Heights,Brooklyn
@@ -439,7 +439,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 4386.05,Fulton St & Clermont Ave,40.68415748,-73.96922273,2025-01-01,6832,6777,75.0,gbfs_id,BK0203,Fort Greene,Brooklyn
 4386.07,Carlton Ave & Greene Ave,40.685957,-73.971468,2025-01-01,6104,6113,25.0,gbfs_id,BK0203,Fort Greene,Brooklyn
 4392.04,Putnam Ave & Throop Ave,40.6851532,-73.94111,2025-01-01,6359,6304,21.0,gbfs_id,BK0302,Bedford-Stuyvesant (East),Brooklyn
-4395.07,Hanson Pl & Ashland Pl,40.68506807308177,-73.97790759801863,2025-01-01,23120,23356,39.0,gbfs_id,BK0203,Fort Greene,Brooklyn
+4395.07,Hanson Pl & Ashland Pl,40.68506807308177,-73.97790759801863,2025-01-01,23120,23356,57.0,gbfs_id,BK0203,Fort Greene,Brooklyn
 4399.03,Eldert St & Bushwick Ave,40.68652,-73.91321,2025-01-01,1769,1724,22.0,gbfs_id,BK0402,Bushwick (East),Brooklyn
 4401.04,Marcy Ave & Gates Ave,40.686679,-73.947417,2025-01-01,3900,3829,21.0,gbfs_id,BK0301,Bedford-Stuyvesant (West),Brooklyn
 4404.10,Bond St & Bergen St,40.6849668,-73.98620772,2025-01-01,5965,5983,27.0,gbfs_id,BK0601,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Brooklyn
@@ -464,13 +464,13 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 4450.06,Putnam Ave & Ralph Ave,40.68705,-73.92338,2025-01-01,3476,3447,20.0,gbfs_id,BK0302,Bedford-Stuyvesant (East),Brooklyn
 4452.03,Lexington Ave & Classon Ave,40.68676793,-73.95928168,2025-01-01,7278,7268,19.0,gbfs_id,BK0301,Bedford-Stuyvesant (West),Brooklyn
 4455.10,Congress St & Clinton St,40.68825516598005,-73.99545192718506,2025-01-01,8506,8552,44.0,gbfs_id,BK0601,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Brooklyn
-4455.11,Kane St & Clinton St,40.6861758,-73.99645295,2025-01-01,5607,5682,26.0,gbfs_id,BK0601,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Brooklyn
+4455.11,Kane St & Clinton St,40.6861758,-73.99645295,2025-01-01,5607,5682,27.0,gbfs_id,BK0601,Carroll Gardens-Cobble Hill-Gowanus-Red Hook,Brooklyn
 4458.06,Stuyvesant Ave & Gates Ave,40.68834,-73.93306,2025-01-01,2433,2216,23.0,gbfs_id,BK0302,Bedford-Stuyvesant (East),Brooklyn
 4461.01,Clermont Ave & Lafayette Ave,40.68764484,-73.96968902,2025-01-01,7188,7133,51.0,gbfs_id,BK0204,Clinton Hill,Brooklyn
-4461.04,DeKalb Ave & Vanderbilt Ave,40.68940747,-73.96885458,2025-01-01,11242,11278,23.0,gbfs_id,BK0204,Clinton Hill,Brooklyn
+4461.04,DeKalb Ave & Vanderbilt Ave,40.68940747,-73.96885458,2025-01-01,11242,11278,,missing,BK0204,Clinton Hill,Brooklyn
 4461.07,Waverly Ave & Lafayette Ave,40.688231,-73.966804,2025-01-01,4275,4275,,missing,BK0204,Clinton Hill,Brooklyn
 4467.03,Monroe St & Marcus Garvey Blvd,40.686722,-73.938988,2025-01-01,4047,4025,20.0,gbfs_id,BK0302,Bedford-Stuyvesant (East),Brooklyn
-4470.09,Lafayette Ave & Ft Greene Pl,40.68700231292619,-73.97664964199066,2025-01-01,15134,15216,36.0,gbfs_id,BK0203,Fort Greene,Brooklyn
+4470.09,Lafayette Ave & Ft Greene Pl,40.68700231292619,-73.97664964199066,2025-01-01,15134,15216,,missing,BK0203,Fort Greene,Brooklyn
 4474.01,Halsey St & Evergreen Ave,40.68858,-73.91227,2025-01-01,1754,1668,22.0,gbfs_id,BK0402,Bushwick (East),Brooklyn
 4476.03,Marcy Ave & Lafayette Ave,40.6900815,-73.947915,2025-01-01,5237,5225,23.0,gbfs_id,BK0301,Bedford-Stuyvesant (West),Brooklyn
 4479.06,Bond St & Fulton St,40.6896218879,-73.9830426872,2025-01-01,13908,13939,47.0,gbfs_id,BK0202,Downtown Brooklyn-DUMBO-Boerum Hill,Brooklyn
@@ -485,7 +485,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 4500.07,Lexington Ave & Stuyvesant Ave,40.68973,-73.93353,2025-01-01,3240,2999,20.0,gbfs_id,BK0302,Bedford-Stuyvesant (East),Brooklyn
 4507.07,Wilson Ave & Moffat St,40.68906,-73.90506,2025-01-01,2812,2768,32.0,gbfs_id,BK0402,Bushwick (East),Brooklyn
 4510.04,Greene Ave & Throop Ave,40.6894932,-73.942061,2025-01-01,6159,6160,19.0,gbfs_id,BK0302,Bedford-Stuyvesant (East),Brooklyn
-4513.06,DeKalb Ave & Hudson Ave,40.689888,-73.981013,2025-01-01,10402,10574,74.0,gbfs_id,BK0203,Fort Greene,Brooklyn
+4513.06,DeKalb Ave & Hudson Ave,40.689888,-73.981013,2025-01-01,10402,10574,,missing,BK0203,Fort Greene,Brooklyn
 4513.09,Ashland Pl & Dekalb Ave,40.690065,-73.978776,2025-01-01,5824,5953,47.0,gbfs_id,BK0203,Fort Greene,Brooklyn
 4517.03,Jefferson Ave & Evergreen Ave,40.68989,-73.91458,2025-01-01,2855,2855,17.0,gbfs_id,BK0402,Bushwick (East),Brooklyn
 4519.02,Greene Ave & Nostrand Ave,40.6883337,-73.950916,2025-01-01,5471,5305,23.0,gbfs_id,BK0301,Bedford-Stuyvesant (West),Brooklyn
@@ -498,11 +498,11 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 4534.06,Lexington Ave & Patchen Ave,40.6904,-73.9277,2025-01-01,3233,3184,18.0,gbfs_id,BK0302,Bedford-Stuyvesant (East),Brooklyn
 4543.07,Lewis Ave & Greene Ave,40.68995,-73.9365,2025-01-01,4563,4481,23.0,gbfs_id,BK0302,Bedford-Stuyvesant (East),Brooklyn
 4546.05,Washington Park,40.6917823,-73.9737299,2025-01-01,7713,7712,24.0,gbfs_id,BK0203,Fort Greene,Brooklyn
-4546.06,DeKalb Ave & S Portland Ave,40.68967018552252,-73.97527355121376,2025-01-01,8717,8745,23.0,gbfs_id,BK0203,Fort Greene,Brooklyn
+4546.06,DeKalb Ave & S Portland Ave,40.68967018552252,-73.97527355121376,2025-01-01,8717,8745,,missing,BK0203,Fort Greene,Brooklyn
 4550.05,Central Ave & Covert St,40.68929,-73.90951,2025-01-01,2147,2057,30.0,gbfs_id,BK0402,Bushwick (East),Brooklyn
 4553.04,Kosciuszko St & Tompkins Ave,40.69128258,-73.9452416,2025-01-01,6018,6046,18.0,gbfs_id,BK0301,Bedford-Stuyvesant (West),Brooklyn
 4560.01,Madison St & Evergreen Ave,40.69122,-73.91693,2025-01-01,2941,2896,18.0,gbfs_id,BK0402,Bushwick (East),Brooklyn
-4562.02,DeKalb Ave & Bedford Ave,40.690894,-73.955195,2025-01-01,5085,5102,27.0,gbfs_id,BK0301,Bedford-Stuyvesant (West),Brooklyn
+4562.02,DeKalb Ave & Bedford Ave,40.690894,-73.955195,2025-01-01,5085,5102,,missing,BK0301,Bedford-Stuyvesant (West),Brooklyn
 4565.07,Schermerhorn St & Court St,40.6910363748993,-73.99201065301895,2025-01-01,11383,11280,59.0,gbfs_id,BK0201,Brooklyn Heights,Brooklyn
 4568.01,Van Buren St & Broadway,40.692,-73.92617,2025-01-01,2212,2151,24.0,gbfs_id,BK0402,Bushwick (East),Brooklyn
 4576.11,Lafayette Ave & Stuyvesant Ave,40.6919925157634,-73.9325501024723,2025-01-01,2598,2463,24.0,gbfs_id,BK0302,Bedford-Stuyvesant (East),Brooklyn
@@ -512,7 +512,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 4591.04,Central Ave & Weirfield St,40.69055,-73.91181,2025-01-01,2486,2488,21.0,gbfs_id,BK0402,Bushwick (East),Brooklyn
 4593.05,Marcy Ave & Hart St,40.693022,-73.94868,2025-01-01,5116,5141,20.0,gbfs_id,BK0301,Bedford-Stuyvesant (West),Brooklyn
 4596.05,Duffield St & Willoughby St,40.69221589,-73.9842844,2025-01-01,10177,10185,48.0,gbfs_id,BK0202,Downtown Brooklyn-DUMBO-Boerum Hill,Brooklyn
-4596.09,Lawrence St & Willoughby St,40.69236178,-73.98631746,2025-01-01,11150,11107,39.0,gbfs_id,BK0202,Downtown Brooklyn-DUMBO-Boerum Hill,Brooklyn
+4596.09,Lawrence St & Willoughby St,40.69236178,-73.98631746,2025-01-01,11150,11107,63.0,gbfs_id,BK0202,Downtown Brooklyn-DUMBO-Boerum Hill,Brooklyn
 4600.09,Bushwick Ave & Linden St,40.69146,-73.92146,2025-01-01,3941,3796,29.0,gbfs_id,BK0402,Bushwick (East),Brooklyn
 4605.04,Clinton St & Joralemon St,40.69239502,-73.99337909,2025-01-01,11579,11683,50.0,gbfs_id,BK0201,Brooklyn Heights,Brooklyn
 4608.01,Broadway & Kosciuszko St,40.69329,-73.92852,2025-01-01,3319,2884,29.0,gbfs_id,BK0401,Bushwick (West),Brooklyn
@@ -558,11 +558,11 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 4710.06,Jay St & Tech Pl,40.695065,-73.987167,2025-01-01,8618,8495,,missing,BK0202,Downtown Brooklyn-DUMBO-Boerum Hill,Brooklyn
 4713.01,Central Ave & Himrod St,40.69676,-73.92302,2025-01-01,3370,3330,25.0,gbfs_id,BK0401,Bushwick (West),Brooklyn
 4715.01,Franklin Ave & Myrtle Ave,40.694546087246025,-73.95801365375519,2025-01-01,2962,2953,27.0,gbfs_id,BK0301,Bedford-Stuyvesant (West),Brooklyn
-4718.08,Pierrepont St & Monroe Pl,40.69535693320225,-73.99344027042389,2025-01-01,4686,4695,24.0,gbfs_id,BK0201,Brooklyn Heights,Brooklyn
+4718.08,Pierrepont St & Monroe Pl,40.69535693320225,-73.99344027042389,2025-01-01,4686,4695,23.0,gbfs_id,BK0201,Brooklyn Heights,Brooklyn
 4718.11,Montague St & Hicks St,40.69522407512035,-73.99598850939152,2025-01-30,7605,7544,36.0,gbfs_id,BK0201,Brooklyn Heights,Brooklyn
 4719.04,St Felix Ave & 61 St,40.69715,-73.8936,2025-01-01,1407,1427,19.0,gbfs_id,QN0503,Glendale,Queens
 4721.01,Cedar St & Evergreen Ave,40.69671,-73.92807,2025-01-01,2734,2701,25.0,gbfs_id,BK0401,Bushwick (West),Brooklyn
-4724.03,Washington Ave & Park Ave,40.69610226,-73.96751037,2025-01-01,9653,9366,39.0,gbfs_id,BK0203,Fort Greene,Brooklyn
+4724.03,Washington Ave & Park Ave,40.69610226,-73.96751037,2025-01-01,9653,9366,55.0,gbfs_id,BK0203,Fort Greene,Brooklyn
 4727.06,Summerfield St & Cypress Ave,40.69662,-73.90056,2025-01-01,1015,1005,19.0,gbfs_id,QN0502,Ridgewood,Queens
 4729.01,Myrtle Ave & Lewis Ave,40.69681963,-73.93756926,2025-01-01,8617,8561,23.0,gbfs_id,BK0302,Bedford-Stuyvesant (East),Brooklyn
 4732.04,Carlton Ave & Park Ave,40.69580705,-73.97355569,2025-01-01,4244,4268,23.0,gbfs_id,BK0203,Fort Greene,Brooklyn
@@ -626,7 +626,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 4890.11,Menahan St & Wyckoff Ave,40.70113,-73.91422,2025-01-01,2202,2218,20.0,gbfs_id,BK0401,Bushwick (West),Brooklyn
 4892.02,Lorimer St & Harrison Ave,40.702726,-73.94984,2025-01-01,487,489,18.0,gbfs_id,BK0103,South Williamsburg,Brooklyn
 4895.03,Front St & Jay St,40.702461,-73.986842,2025-01-01,6935,7046,24.0,gbfs_id,BK0202,Downtown Brooklyn-DUMBO-Boerum Hill,Brooklyn
-4895.09,Jay St & York St,40.70140317257725,-73.98672670125961,2025-01-01,13745,13844,,missing,BK0202,Downtown Brooklyn-DUMBO-Boerum Hill,Brooklyn
+4895.09,Jay St & York St,40.70140317257725,-73.98672670125961,2025-01-01,13745,13844,39.0,gbfs_id,BK0202,Downtown Brooklyn-DUMBO-Boerum Hill,Brooklyn
 4895.15,Pearl St & York St,40.70140463410644,-73.98768022656441,2025-01-01,3286,3494,54.0,gbfs_id,BK0202,Downtown Brooklyn-DUMBO-Boerum Hill,Brooklyn
 4898.02,Irving Ave & DeKalb Ave,40.7027,-73.92095,2025-01-01,4165,4171,27.0,gbfs_id,BK0401,Bushwick (West),Brooklyn
 4903.08,Old Fulton St,40.70277159,-73.99383605,2025-01-01,7554,7641,39.0,gbfs_id,BK0202,Downtown Brooklyn-DUMBO-Boerum Hill,Brooklyn
@@ -722,7 +722,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 5134.09,Broadway & Kent Ave,40.710888,-73.968329,2025-01-01,15721,15726,55.0,gbfs_id,BK0102,Williamsburg,Brooklyn
 5137.10,Spruce St & Nassau St,40.71146364,-74.00552427,2025-01-01,10065,10088,34.0,gbfs_id,MN0101,Financial District-Battery Park City,Manhattan
 5137.11,Fulton St & William St,40.70960089363537,-74.00655090808868,2025-01-01,13441,13459,43.0,gbfs_id,MN0101,Financial District-Battery Park City,Manhattan
-5137.12,Gold St & Frankfort St,40.71069995,-74.00354147,2025-01-01,3830,3910,40.0,gbfs_id,MN0101,Financial District-Battery Park City,Manhattan
+5137.12,Gold St & Frankfort St,40.71069995,-74.00354147,2025-01-01,3830,3910,,missing,MN0101,Financial District-Battery Park City,Manhattan
 5138.03,60 Pl & Bleecker St,40.71107,-73.903,2025-01-01,830,779,19.0,gbfs_id,QN0502,Ridgewood,Queens
 5140.06,Bushwick Ave & Stagg St,40.709897,-73.94008,2025-01-01,2141,2130,21.0,gbfs_id,BK0104,East Williamsburg,Brooklyn
 5145.02,Albany St & Greenwich St,40.709267,-74.013247,2025-01-01,7280,7438,46.0,gbfs_id,MN0101,Financial District-Battery Park City,Manhattan
@@ -767,11 +767,11 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 5250.05,Bushwick Ave & Powers St,40.71247661,-73.94100005,2025-01-01,7507,7460,32.0,gbfs_id,BK0104,East Williamsburg,Brooklyn
 5257.01,53 St & Flushing Ave,40.71435,-73.91405,2025-01-01,1904,1938,19.0,gbfs_id,QN0501,Maspeth,Queens
 5259.06,Devoe St & Lorimer St,40.71335226222875,-73.9491033554077,2025-01-01,10488,10540,32.0,gbfs_id,BK0104,East Williamsburg,Brooklyn
-5262.09,Madison St & Montgomery St,40.713126,-73.984844,2025-01-01,7217,7208,20.0,gbfs_id,MN0302,Lower East Side,Manhattan
+5262.09,Madison St & Montgomery St,40.713126,-73.984844,2025-01-01,7217,7208,30.0,gbfs_id,MN0302,Lower East Side,Manhattan
 5267.08,Grand St & Havemeyer St,40.71286844,-73.95698119,2025-01-01,10351,10408,31.0,gbfs_id,BK0102,Williamsburg,Brooklyn
 5267.09,Roebling St & N 4 St,40.71469,-73.95739,2025-01-01,13329,13411,25.0,gbfs_id,BK0102,Williamsburg,Brooklyn
 5270.05,Pike St & E Broadway,40.71406667,-73.99293911,2025-01-01,9498,9493,34.0,gbfs_id,MN0301,Chinatown-Two Bridges,Manhattan
-5270.07,Forsyth St & Canal St,40.7158155,-73.99422366,2025-01-01,12564,12708,29.0,gbfs_id,MN0301,Chinatown-Two Bridges,Manhattan
+5270.07,Forsyth St & Canal St,40.7158155,-73.99422366,2025-01-01,12564,12708,44.0,gbfs_id,MN0301,Chinatown-Two Bridges,Manhattan
 5270.09,Market St & Henry St,40.71310702305908,-73.99446353316307,2025-01-01,13225,13192,42.0,gbfs_id,MN0301,Chinatown-Two Bridges,Manhattan
 5273.01,Metropolitan Ave & Stewart Ave,40.71401,-73.92793,2025-01-01,1697,1727,20.0,gbfs_id,BK0104,East Williamsburg,Brooklyn
 5276.04,S 2 St & Kent Ave,40.714731,-73.966612,2025-01-01,24661,24914,47.0,gbfs_id,BK0102,Williamsburg,Brooklyn
@@ -782,7 +782,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 5288.09,Warren St & W Broadway,40.71473993,-74.00910627,2025-01-01,11287,11404,71.0,gbfs_id,MN0102,Tribeca-Civic Center,Manhattan
 5288.12,Murray St & Greenwich St,40.71485150526251,-74.01122331619263,2025-01-01,11021,11198,49.0,gbfs_id,MN0102,Tribeca-Civic Center,Manhattan
 5289.05,56 St & Arnold Ave,40.71484,-73.909,2025-01-01,575,578,21.0,gbfs_id,QN0501,Maspeth,Queens
-5291.05,Graham Ave & Conselyea St,40.715143,-73.944507,2025-01-01,16356,16338,30.0,gbfs_id,BK0104,East Williamsburg,Brooklyn
+5291.05,Graham Ave & Conselyea St,40.715143,-73.944507,2025-01-01,16356,16338,44.0,gbfs_id,BK0104,East Williamsburg,Brooklyn
 5294.04,Henry St & Grand St,40.714211,-73.981095,2025-01-01,20177,20183,36.0,gbfs_id,MN0302,Lower East Side,Manhattan
 5297.02,Vesey Pl & River Terrace,40.7153379,-74.01658354,2025-01-01,25052,25044,57.0,gbfs_id,MN0101,Financial District-Battery Park City,Manhattan
 5300.05,Metropolitan Ave & Meeker Ave,40.71413311,-73.95234386,2025-01-01,12849,12850,30.0,gbfs_id,BK0104,East Williamsburg,Brooklyn
@@ -821,7 +821,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 5379.09,Berry St & N 8 St,40.7190095,-73.95852515,2025-01-01,15394,15245,27.0,gbfs_id,BK0102,Williamsburg,Brooklyn
 5379.10,N 6 St & Bedford Ave,40.71745169,-73.95850939,2025-01-01,24114,24121,48.0,gbfs_id,BK0102,Williamsburg,Brooklyn
 5382.06,Grand St & Elizabeth St,40.718822,-73.99596,2025-01-01,24495,24559,45.0,gbfs_id,MN0201,SoHo-Little Italy-Hudson Square,Manhattan
-5382.07,Forsyth St & Grand St,40.71779817737835,-73.99316132068634,2025-01-01,21816,22014,63.0,gbfs_id,MN0301,Chinatown-Two Bridges,Manhattan
+5382.07,Forsyth St & Grand St,40.71779817737835,-73.99316132068634,2025-01-01,21816,22014,93.0,gbfs_id,MN0301,Chinatown-Two Bridges,Manhattan
 5388.01,Kent Ave & Grand St,40.716425,-73.96594,2025-01-01,20219,20298,45.0,gbfs_id,BK0102,Williamsburg,Brooklyn
 5391.06,Lispenard St & Broadway,40.71939226,-74.00247214,2025-01-01,13219,13343,79.0,gbfs_id,MN0102,Tribeca-Civic Center,Manhattan
 5392.04,63 St & 59 Dr,40.71832,-73.90128,2025-01-01,281,302,23.0,gbfs_id,QN0501,Maspeth,Queens
@@ -857,8 +857,8 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 5453.05,Forsyth St & Broome St,40.71893904,-73.99266288,2025-01-01,8965,9228,66.0,gbfs_id,MN0302,Lower East Side,Manhattan
 5453.06,Kenmare St & Elizabeth St,40.72054,-73.9949,2025-01-01,15833,15904,54.0,gbfs_id,MN0201,SoHo-Little Italy-Hudson Square,Manhattan
 5458.02,N 5 St & Northside Piers,40.719876,-73.963865,2025-01-01,12640,12886,45.0,gbfs_id,BK0102,Williamsburg,Brooklyn
-5470.10,Greenwich St & Hubert St,40.721319,-74.010065,2025-01-01,9899,10325,35.0,gbfs_id,MN0102,Tribeca-Civic Center,Manhattan
-5470.12,North Moore St & Greenwich St,40.72019521437465,-74.0103006362915,2025-01-01,17738,18012,29.0,gbfs_id,MN0102,Tribeca-Civic Center,Manhattan
+5470.10,Greenwich St & Hubert St,40.721319,-74.010065,2025-01-01,9899,10325,51.0,gbfs_id,MN0102,Tribeca-Civic Center,Manhattan
+5470.12,North Moore St & Greenwich St,40.72019521437465,-74.0103006362915,2025-01-01,17738,18012,44.0,gbfs_id,MN0102,Tribeca-Civic Center,Manhattan
 5470.13,Hudson St & N Moore St,40.719887998,-74.0086269379,2025-01-01,7633,7922,69.0,gbfs_id,MN0102,Tribeca-Civic Center,Manhattan
 5471.04,Grand Ave & 58 Ave,40.72098,-73.90701,2025-01-01,412,432,20.0,gbfs_id,QN0501,Maspeth,Queens
 5473.03,Engert Ave & McGuinness Blvd,40.72158,-73.94546,2025-01-01,4351,4350,19.0,gbfs_id,BK0101,Greenpoint,Brooklyn
@@ -957,7 +957,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 5743.02,Calyer St & Jewel St,40.72984,-73.94839,2025-01-01,5130,5303,40.0,gbfs_id,BK0101,Greenpoint,Brooklyn
 5746.02,E 10 St & 2 Ave,40.72970805644994,-73.9865979552269,2025-01-01,18859,18928,41.0,gbfs_id,MN0303,East Village,Manhattan
 5746.14,E 11 St & 1 Ave,40.72953837,-73.98426726,2025-01-01,18202,18243,61.0,gbfs_id,MN0303,East Village,Manhattan
-5752.07,Milton St & Franklin St,40.72906,-73.95779,2025-01-01,12096,12261,33.0,gbfs_id,BK0101,Greenpoint,Brooklyn
+5752.07,Milton St & Franklin St,40.72906,-73.95779,2025-01-01,12096,12261,51.0,gbfs_id,BK0101,Greenpoint,Brooklyn
 5752.09,Greenpoint Ave & West St,40.729803,-73.959099,2025-01-01,12910,13039,35.0,gbfs_id,BK0101,Greenpoint,Brooklyn
 5755.01,Washington Pl & Broadway,40.72903917,-73.99404649,2025-01-01,11216,11212,27.0,gbfs_id,MN0202,Greenwich Village,Manhattan
 5755.14,University Pl & E 8 St,40.73143724085228,-73.99490341544151,2025-01-01,16404,16422,79.0,gbfs_id,MN0202,Greenwich Village,Manhattan
@@ -1001,8 +1001,8 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 5878.02,60 Ave & Junction Blvd,40.73466,-73.86501,2025-01-01,953,968,24.0,gbfs_id,QN0401,Elmhurst,Queens
 5880.02,W 4 St & 7 Ave S,40.73401143,-74.00293877,2025-01-01,25764,25836,60.0,gbfs_id,MN0203,West Village,Manhattan
 5881.01,Tyler Ave & Maurice Ave,40.73394,-73.90128,2025-01-01,614,614,19.0,gbfs_id,QN0271,Calvary & Mount Zion Cemeteries,Queens
-5883.06,Van Dam St & Greenpoint Ave,40.73443564069459,-73.93790781497955,2025-01-01,317,315,17.0,gbfs_nearest,QN0202,Sunnyside,Queens
-5883.08,Review Ave & Greenpoint Ave,40.734246796135544,-73.93776814411713,2025-10-22,77,81,17.0,gbfs_id,QN0202,Sunnyside,Queens
+5883.06,Van Dam St & Greenpoint Ave,40.73443564069459,-73.93790781497955,2025-01-01,317,315,19.0,gbfs_id,QN0202,Sunnyside,Queens
+5883.08,Review Ave & Greenpoint Ave,40.734246796135544,-73.93776814411713,2025-10-22,77,81,19.0,gbfs_nearest,QN0202,Sunnyside,Queens
 5886.13,E 20 St & FDR Dr,40.733208626522426,-73.9756813647,2025-01-01,18003,17666,63.0,gbfs_nearest,MN0601,Stuyvesant Town-Peter Cooper Village,Manhattan
 5887.03,Queens Blvd & 56 Ave,40.73481,-73.87431,2025-01-01,1584,1644,38.0,gbfs_id,QN0401,Elmhurst,Queens
 5896.01,E 17 St & 2 Ave,40.73431166276575,-73.98372530937195,2025-01-01,12473,12468,47.0,gbfs_id,MN0602,Gramercy,Manhattan
@@ -1133,7 +1133,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 6176.11,40 St & Queens Blvd,40.743540273428685,-73.92435193061829,2025-01-01,5695,5544,25.0,gbfs_id,QN0202,Sunnyside,Queens
 6179.07,Center Blvd & 51 Ave,40.743366080270214,-73.95960688591003,2025-01-01,7096,7138,23.0,gbfs_id,QN0201,Long Island City-Hunters Point,Queens
 6180.05,51 Ave & Alstyne Ave,40.74311,-73.85715,2025-01-01,444,445,21.0,gbfs_id,QN0402,Corona,Queens
-6182.02,W 20 St & 7 Ave,40.74238787,-73.99726235,2025-01-01,21670,21727,32.0,gbfs_id,MN0401,Chelsea-Hudson Yards,Manhattan
+6182.02,W 20 St & 7 Ave,40.74238787,-73.99726235,2025-01-01,21670,21727,44.0,gbfs_id,MN0401,Chelsea-Hudson Yards,Manhattan
 6183.03,Woodside Ave & 69 St,40.7428,-73.89584,2025-01-01,403,389,19.0,gbfs_id,QN0203,Woodside,Queens
 6185.04,33 St & 47 Ave,40.74283,-73.9321,2025-01-01,1019,1062,24.0,gbfs_id,QN0202,Sunnyside,Queens
 6185.07,33 St & Queens Blvd,40.7443653191867,-73.93172398209572,2025-01-01,2218,2088,24.0,gbfs_id,QN0202,Sunnyside,Queens
@@ -1365,7 +1365,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 6587.04,Broadway & 49 St,40.755389,-73.911517,2025-01-01,895,907,25.0,gbfs_id,QN0104,Astoria (East)-Woodside (North),Queens
 6593.14,W 43 St & 6 Ave,40.75527307,-73.98316936,2025-01-01,8833,8682,63.0,gbfs_id,MN0502,Midtown-Times Square,Manhattan
 6593.15,6 Ave & W 45 St,40.756951,-73.982631,2025-01-01,16720,16654,67.0,gbfs_id,MN0502,Midtown-Times Square,Manhattan
-6594.02,85 St & Northern Blvd,40.75601,-73.88266,2025-01-01,1302,1279,21.0,gbfs_id,QN0301,Jackson Heights,Queens
+6594.02,85 St & Northern Blvd,40.75601,-73.88266,2025-01-01,1302,1279,22.0,gbfs_id,QN0301,Jackson Heights,Queens
 6596.10,34 Ave & 45 St,40.754795,-73.917014,2025-01-01,2159,2136,23.0,gbfs_id,QN0104,Astoria (East)-Woodside (North),Queens
 6599.01,Roosevelt Island Tramway,40.757284,-73.9536,2025-01-01,5696,5739,39.0,gbfs_id,MN0801,Upper East Side-Lenox Hill-Roosevelt Island,Manhattan
 6602.03,W 41 St & 8 Ave,40.75640548,-73.9900262,2025-01-01,28092,28164,105.0,gbfs_id,MN0502,Midtown-Times Square,Manhattan
@@ -1428,7 +1428,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 6703.06,46 St & 30 Rd,40.76072,-73.910989,2025-01-01,1689,1672,21.0,gbfs_id,QN0104,Astoria (East)-Woodside (North),Queens
 6708.04,Broadway & W 48 St,40.76017739537783,-73.98486793041229,2025-01-02,18921,19228,103.0,gbfs_id,MN0502,Midtown-Times Square,Manhattan
 6709.01,31 Ave & 84 St,40.75947,-73.88431,2025-01-01,756,715,21.0,gbfs_id,QN0301,Jackson Heights,Queens
-6709.05,31 Ave & 86 St,40.75958,-73.88219,2025-01-01,748,756,15.0,gbfs_id,QN0301,Jackson Heights,Queens
+6709.05,31 Ave & 86 St,40.75958,-73.88219,2025-01-01,748,756,19.0,gbfs_id,QN0301,Jackson Heights,Queens
 6711.13,Steinway St & Broadway,40.75905795418586,-73.91897544264793,2025-01-01,9233,9184,32.0,gbfs_id,QN0104,Astoria (East)-Woodside (North),Queens
 6717.06,9 Ave & W 45 St,40.76019252,-73.9912551,2025-01-01,19103,18989,31.0,gbfs_nearest,MN0402,Hell's Kitchen,Manhattan
 6718.02,77 St & 31 Ave,40.75886,-73.89081,2025-01-01,1444,1444,20.0,gbfs_id,QN0301,Jackson Heights,Queens
@@ -1447,7 +1447,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 6741.03,91 St & 31 Ave,40.76022,-73.87774,2025-01-01,622,618,21.0,gbfs_id,QN0301,Jackson Heights,Queens
 6743.06,Newton Rd & 44 St,40.7595701,-73.9142678,2025-01-01,2137,2103,19.0,gbfs_id,QN0104,Astoria (East)-Woodside (North),Queens
 6747.06,W 49 St & 8 Ave,40.76227205,-73.98788205,2025-01-01,12607,11713,67.0,gbfs_id,MN0402,Hell's Kitchen,Manhattan
-6747.07,8 Ave & W 49 St,40.76171227910671,-73.98655101656914,2025-01-01,26098,25883,65.0,gbfs_id,MN0402,Hell's Kitchen,Manhattan
+6747.07,8 Ave & W 49 St,40.76171227910671,-73.98655101656914,2025-01-01,26098,25883,64.0,gbfs_id,MN0402,Hell's Kitchen,Manhattan
 6748.04,82 St & 30 Ave,40.76109,-73.88632,2025-01-01,677,685,19.0,gbfs_id,QN0301,Jackson Heights,Queens
 6750.16,35 St & Broadway,40.760339,-73.9222427,2025-01-01,4551,4584,18.0,gbfs_id,QN0103,Astoria (Central),Queens
 6753.08,1 Ave & E 62 St,40.7612274,-73.96094022,2025-01-16,20888,20916,45.0,gbfs_id,MN0801,Upper East Side-Lenox Hill-Roosevelt Island,Manhattan
@@ -1477,7 +1477,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 6804.01,49 St & 25 Ave,40.764496,-73.904632,2025-01-01,1079,909,25.0,gbfs_id,QN0104,Astoria (East)-Woodside (North),Queens
 6806.06,35 Ave & 10 St,40.76315481910373,-73.93985509872437,2025-01-01,3147,3148,26.0,gbfs_id,QN0105,Queensbridge-Ravenswood-Dutch Kills,Queens
 6809.07,W 56 St & 6 Ave,40.76340613,-73.97722479,2025-01-01,13622,13634,54.0,gbfs_id,MN0502,Midtown-Times Square,Manhattan
-6809.09,W 55 St & 6 Ave,40.763189,-73.978434,2025-01-01,12600,12626,43.0,gbfs_id,MN0502,Midtown-Times Square,Manhattan
+6809.09,W 55 St & 6 Ave,40.763189,-73.978434,2025-01-01,12600,12626,77.0,gbfs_id,MN0502,Midtown-Times Square,Manhattan
 6810.01,92 St & Astoria Blvd,40.76313,-73.8772,2025-01-01,428,440,18.0,gbfs_id,QN0302,East Elmhurst,Queens
 6812.06,30 Ave & 41 St,40.763422,-73.914142,2025-01-01,3984,3983,23.0,gbfs_id,QN0104,Astoria (East)-Woodside (North),Queens
 6814.01,Motorgate,40.7639089,-73.9477213,2025-01-01,4979,5001,36.0,gbfs_id,MN0801,Upper East Side-Lenox Hill-Roosevelt Island,Manhattan
@@ -1514,7 +1514,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 6884.03,W 56 St & 8 Ave,40.765959181657976,-73.98313522338867,2025-01-01,16811,16656,50.0,gbfs_id,MN0502,Midtown-Times Square,Manhattan
 6885.01,24 Ave & 87 St,40.7654,-73.88256,2025-01-01,344,364,20.0,gbfs_id,QN0302,East Elmhurst,Queens
 6887.03,35 St & 30 Ave,40.76547569244953,-73.91811579465866,2025-01-01,4603,4532,29.0,gbfs_id,QN0103,Astoria (Central),Queens
-6889.12,E 72 St & York Ave,40.76663814,-73.95348296,2025-01-01,20064,20028,29.0,gbfs_id,MN0801,Upper East Side-Lenox Hill-Roosevelt Island,Manhattan
+6889.12,E 72 St & York Ave,40.76663814,-73.95348296,2025-01-01,20064,20028,37.0,gbfs_id,MN0801,Upper East Side-Lenox Hill-Roosevelt Island,Manhattan
 6890.01,W 53 St & 10 Ave,40.76669671,-73.99061728,2025-01-01,16199,16112,29.0,gbfs_id,MN0402,Hell's Kitchen,Manhattan
 6890.06,W 50 St & 10 Ave,40.764734200065185,-73.99194359779358,2025-01-01,12671,11796,55.0,gbfs_id,MN0402,Hell's Kitchen,Manhattan
 6893.10,31 Ave & Crescent St,40.7658346,-73.9265474,2025-01-01,4267,4312,21.0,gbfs_id,QN0103,Astoria (Central),Queens
@@ -1583,11 +1583,11 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 7066.01,20 Ave & 48 St,40.772899,-73.896849,2025-01-01,669,694,23.0,gbfs_id,QN0101,Astoria (North)-Ditmars-Steinway,Queens
 7068.07,8 St & Astoria Blvd,40.7725996921817,-73.93266275525093,2025-01-01,2277,2277,19.0,gbfs_id,QN0102,Old Astoria-Hallets Point,Queens
 7074.01,Steinway St & Ditmars Blvd,40.772717,-73.906127,2025-01-01,1555,1551,21.0,gbfs_id,QN0101,Astoria (North)-Ditmars-Steinway,Queens
-7079.06,Central Park W & W 68 St,40.7734066,-73.97782542,2025-01-01,20609,20194,43.0,gbfs_id,MN6491,Central Park,Manhattan
+7079.06,Central Park W & W 68 St,40.7734066,-73.97782542,2025-01-01,20609,20194,,missing,MN6491,Central Park,Manhattan
 7082.08,23 Ave & 31 St,40.77423301703027,-73.91274864321404,2025-01-01,4446,4469,27.0,gbfs_id,QN0101,Astoria (North)-Ditmars-Steinway,Queens
 7082.14,23 Rd & 31 St,40.77336750284339,-73.91382560133934,2025-01-01,1073,1060,21.0,gbfs_id,QN0101,Astoria (North)-Ditmars-Steinway,Queens
 7084.12,E 81 St & York Ave,40.7728384,-73.94989233,2025-01-01,11130,11076,47.0,gbfs_id,MN0803,Upper East Side-Yorkville,Manhattan
-7092.06,E 77 St & 3 Ave,40.77314236,-73.95856158,2025-01-01,12978,12967,46.0,gbfs_id,MN0802,Upper East Side-Carnegie Hill,Manhattan
+7092.06,E 77 St & 3 Ave,40.77314236,-73.95856158,2025-01-01,12978,12967,45.0,gbfs_id,MN0802,Upper East Side-Carnegie Hill,Manhattan
 7098.05,27 Ave & 9 St,40.7739825,-73.9309134,2025-01-01,2503,2538,40.0,gbfs_id,QN0102,Old Astoria-Hallets Point,Queens
 7100.07,5 Ave & E 72 St,40.77282817,-73.96685276,2025-01-01,20819,20846,33.0,gbfs_id,MN6491,Central Park,Manhattan
 7111.10,36 St & Ditmars Blvd,40.774306,-73.908335,2025-01-01,3062,3072,25.0,gbfs_id,QN0101,Astoria (North)-Ditmars-Steinway,Queens
@@ -1600,14 +1600,14 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 7128.08,E 76 St & Park Ave,40.773763,-73.96222088,2025-01-01,10150,10184,28.0,gbfs_id,MN0802,Upper East Side-Carnegie Hill,Manhattan
 7132.08,27 Ave & 3 St,40.77485,-73.9342,2025-01-01,1408,1404,19.0,gbfs_id,QN0102,Old Astoria-Hallets Point,Queens
 7137.04,Steinway St & 21 Ave,40.774798,-73.903787,2025-01-01,2242,2250,21.0,gbfs_id,QN0101,Astoria (North)-Ditmars-Steinway,Queens
-7141.07,Central Park W & W 72 St,40.77579376683666,-73.9762057363987,2025-01-01,20238,20066,51.0,gbfs_id,MN6491,Central Park,Manhattan
+7141.07,Central Park W & W 72 St,40.77579376683666,-73.9762057363987,2025-01-01,20238,20066,,missing,MN6491,Central Park,Manhattan
 7144.02,31 St & Ditmars Blvd,40.776168,-73.910485,2025-01-01,8856,8839,24.0,gbfs_id,QN0101,Astoria (North)-Ditmars-Steinway,Queens
 7146.04,E 85 St & York Ave,40.77536905,-73.94803392,2025-01-01,5024,5020,47.0,gbfs_id,MN0803,Upper East Side-Yorkville,Manhattan
 7149.05,Amsterdam Ave & W 66 St,40.7746671,-73.98470567,2025-01-01,11140,11122,28.0,gbfs_id,MN0701,Upper West Side-Lincoln Square,Manhattan
 7152.10,24 Ave & 26 St,40.774591,-73.918544,2025-01-01,2729,2754,19.0,gbfs_id,QN0101,Astoria (North)-Ditmars-Steinway,Queens
 7154.10,3 Ave & E 82 St,40.775744,-73.9563752,2025-01-01,13925,13969,43.0,gbfs_id,MN0802,Upper East Side-Carnegie Hill,Manhattan
 7159.08,Astoria Park S & Shore Blvd,40.7767,-73.927631,2025-01-01,3763,3732,33.0,gbfs_id,QN0191,Astoria Park,Queens
-7161.08,5 Ave & E 78 St,40.77632142182271,-73.96427392959595,2025-01-01,14248,14108,47.0,gbfs_id,MN6491,Central Park,Manhattan
+7161.08,5 Ave & E 78 St,40.77632142182271,-73.96427392959595,2025-01-01,14248,14108,19.0,gbfs_id,MN6491,Central Park,Manhattan
 7163.07,20 Ave & 42 St,40.775415,-73.900063,2025-01-01,934,966,21.0,gbfs_id,QN0101,Astoria (North)-Ditmars-Steinway,Queens
 7165.01,26 Ave & 2 St,40.77684387,-73.93463418,2025-01-01,1818,1806,23.0,gbfs_id,QN0102,Old Astoria-Hallets Point,Queens
 7170.04,35 St & 21 Ave,40.776745,-73.906558,2025-01-01,1305,1311,23.0,gbfs_id,QN0101,Astoria (North)-Ditmars-Steinway,Queens
@@ -1629,7 +1629,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 7233.05,Crescent St & Ditmars Blvd,40.7787185,-73.9145645,2025-01-01,1828,1836,19.0,gbfs_id,QN0101,Astoria (North)-Ditmars-Steinway,Queens
 7235.13,E 88 St & 1 Ave,40.778301,-73.9488134,2025-01-01,10708,10739,39.0,gbfs_id,MN0803,Upper East Side-Yorkville,Manhattan
 7243.04,E 84 St & Park Ave,40.77862688,-73.95772073,2025-01-01,6301,6312,45.0,gbfs_id,MN0802,Upper East Side-Carnegie Hill,Manhattan
-7253.04,Central Park W & W 76 St,40.77896784,-73.97374737,2025-01-01,13295,13117,39.0,gbfs_id,MN6491,Central Park,Manhattan
+7253.04,Central Park W & W 76 St,40.77896784,-73.97374737,2025-01-01,13295,13117,,missing,MN6491,Central Park,Manhattan
 7256.01,20 Ave & 31 St,40.78001336610564,-73.90667617321014,2025-01-01,865,892,21.0,gbfs_id,QN0101,Astoria (North)-Ditmars-Steinway,Queens
 7260.09,Amsterdam Ave & W 73 St,40.77966809007312,-73.98093044757842,2025-01-01,22875,22522,54.0,gbfs_id,MN0701,Upper West Side-Lincoln Square,Manhattan
 7265.10,E 89 St & 3 Ave,40.7806284,-73.9521667,2025-01-01,11114,11122,39.0,gbfs_id,MN0803,Upper East Side-Yorkville,Manhattan
@@ -1682,7 +1682,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 7504.18,E 106 St & Lexington Ave,40.791976,-73.945993,2025-01-01,3624,3676,27.0,gbfs_id,MN1101,East Harlem (South),Manhattan
 7504.19,3 Ave & E 109 St,40.79338,-73.94329,2025-01-01,2974,3001,25.0,gbfs_id,MN1101,East Harlem (South),Manhattan
 7511.19,5 Ave & E 103 St,40.7922553,-73.95249933,2025-01-01,10115,10211,39.0,gbfs_id,MN1101,East Harlem (South),Manhattan
-7514.06,Icahn Stadium Plaza,40.79322,-73.92396,2025-01-01,2617,2638,4.0,gbfs_id,MN1191,Randall's Island,Manhattan
+7514.06,Icahn Stadium Plaza,40.79322,-73.92396,2025-01-01,2617,2638,19.0,gbfs_id,MN1191,Randall's Island,Manhattan
 7520.07,Columbus Ave & W 95 St,40.7919557,-73.968087,2025-01-01,16578,16324,39.0,gbfs_id,MN0702,Upper West Side (Central),Manhattan
 7522.02,1 Ave & E 110 St,40.7923272,-73.9383,2025-01-01,6613,6628,25.0,gbfs_id,MN1102,East Harlem (North),Manhattan
 7524.09,West End Ave & W 94 St,40.7941654,-73.974124,2025-01-01,8837,8662,31.0,gbfs_id,MN0702,Upper West Side (Central),Manhattan
@@ -1747,7 +1747,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 7696.07,E 128 St & 3 Ave,40.805631,-73.934077,2025-01-01,1008,967,19.0,gbfs_id,MN1102,East Harlem (North),Manhattan
 7701.21,5 Ave & W 126 St,40.80722,-73.9418,2025-01-01,4784,4841,27.0,gbfs_id,MN1002,Harlem (North),Manhattan
 7703.14,E 141 St & Jackson Ave,40.806896,-73.911837,2025-01-01,699,695,19.0,gbfs_id,BX0101,Mott Haven-Port Morris,Bronx
-7704.04,Adam Clayton Powell Blvd & W 123 St,40.8078316,-73.949373,2025-01-01,6162,6262,31.0,gbfs_id,MN1001,Harlem (South),Manhattan
+7704.04,Adam Clayton Powell Blvd & W 123 St,40.8078316,-73.949373,2025-01-01,6162,6262,17.0,gbfs_id,MN1001,Harlem (South),Manhattan
 7707.08,Brook Ave & E 138 St,40.807408,-73.91924,2025-01-01,1513,1604,23.0,gbfs_id,BX0101,Mott Haven-Port Morris,Bronx
 7712.04,Alexander Ave & E 134 St,40.807466,-73.927107,2025-01-01,1635,1678,19.0,gbfs_id,BX0101,Mott Haven-Port Morris,Bronx
 7712.06,Lincoln Ave & E 134 St,40.808484,-73.928803,2025-01-01,1777,1804,17.0,gbfs_id,BX0101,Mott Haven-Port Morris,Bronx
@@ -1764,7 +1764,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 7735.23,E 128 St & Madison Ave,40.80756,-73.939182,2025-01-01,2533,2568,23.0,gbfs_id,MN1102,East Harlem (North),Manhattan
 7737.06,St Mary's St & Jackson Ave,40.808891,-73.91081,2025-01-01,1296,1281,19.0,gbfs_id,BX0101,Mott Haven-Port Morris,Bronx
 7738.04,Adam Clayton Powell Blvd & W 126 St,40.809495347779475,-73.94776493310928,2025-01-01,9665,9918,33.0,gbfs_id,MN1001,Harlem (South),Manhattan
-7740.08,Brook Ave & E 141 St,40.809619,-73.917875,2025-01-01,840,860,,missing,BX0101,Mott Haven-Port Morris,Bronx
+7740.08,Brook Ave & E 141 St,40.809619,-73.917875,2025-01-01,840,860,19.0,gbfs_id,BX0101,Mott Haven-Port Morris,Bronx
 7741.01,Morningside Ave & W 123 St,40.81,-73.9551508,2025-01-01,3941,4143,35.0,gbfs_id,MN0901,Morningside Heights,Manhattan
 7741.04,Morningside Dr & Amsterdam Ave,40.81028506306003,-73.95736455917358,2025-01-01,3143,3146,35.0,gbfs_id,MN0901,Morningside Heights,Manhattan
 7744.06,Lincoln Ave & E 138 St,40.810893,-73.927311,2025-01-01,3084,3076,26.0,gbfs_id,BX0101,Mott Haven-Port Morris,Bronx
@@ -1825,7 +1825,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 7883.06,Lafayette Ave & Hunts Point Ave,40.816567,-73.888161,2025-01-01,860,839,22.0,gbfs_id,BX0201,Hunts Point,Bronx
 7883.09,Seneca Ave & Irvine St,40.81872569990116,-73.88862490653992,2025-07-21,215,202,19.0,gbfs_id,BX0201,Hunts Point,Bronx
 7883.10,Seneca Ave & Irvine St,40.81885,-73.88821,2025-01-01,155,146,19.0,gbfs_nearest,BX0201,Hunts Point,Bronx
-7884.04,E 149 St & Park Ave,40.818154,-73.925294,2025-01-01,2869,2866,27.0,gbfs_id,BX0401,Concourse-Concourse Village,Bronx
+7884.04,E 149 St & Park Ave,40.818154,-73.925294,2025-01-01,2869,2866,26.0,gbfs_id,BX0401,Concourse-Concourse Village,Bronx
 7886.02,12 Ave & W 125 St,40.818299,-73.960405,2025-01-01,3899,3931,39.0,gbfs_id,MN0902,Manhattanville-West Harlem,Manhattan
 7888.10,Dawson St & Intervale Ave,40.819999,-73.897263,2025-01-01,329,331,19.0,gbfs_id,BX0202,Longwood,Bronx
 7891.06,Westchester Ave & E 156 St,40.817802,-73.905203,2025-01-01,841,796,23.0,gbfs_id,BX0102,Melrose,Bronx
@@ -1872,7 +1872,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 7981.27,W 140 St & Riverside Dr,40.824013,-73.954743,2025-01-01,933,886,23.0,gbfs_id,MN0903,Hamilton Heights-Sugar Hill,Manhattan
 7983.02,Longfellow Ave & Aldus St,40.82319448542357,-73.88762910982096,2025-01-01,738,706,24.0,gbfs_id,BX0202,Longwood,Bronx
 7983.04,Longfellow Ave & E 165 St,40.825322,-73.887729,2025-01-01,345,340,21.0,gbfs_id,BX0202,Longwood,Bronx
-7984.04,Grand Concourse & E 156 St,40.823429,-73.924689,2025-01-01,1776,1701,20.0,gbfs_id,BX0401,Concourse-Concourse Village,Bronx
+7984.04,Grand Concourse & E 156 St,40.823429,-73.924689,2025-01-01,1776,1701,21.0,gbfs_id,BX0401,Concourse-Concourse Village,Bronx
 7987.14,Rogers Pl & E 165 St,40.82388366441761,-73.8974027708582,2025-01-02,503,503,19.0,gbfs_id,BX0202,Longwood,Bronx
 7991.01,Tinton Ave & E 165 St,40.824796,-73.90242,2025-01-01,1438,1398,19.0,gbfs_id,BX0301,Morrisania,Bronx
 7992.04,Bradhurst Ave & W 148 St,40.825125,-73.941616,2025-01-01,1997,1965,22.0,gbfs_id,MN0903,Hamilton Heights-Sugar Hill,Manhattan
@@ -1891,7 +1891,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 8018.09,W 146 St & Broadway,40.826969,-73.949738,2025-01-01,3203,2949,30.0,gbfs_id,MN0903,Hamilton Heights-Sugar Hill,Manhattan
 8020.01,Home St & Westchester Ave,40.827629,-73.886659,2025-01-01,1518,1568,21.0,gbfs_id,BX0303,Crotona Park East,Bronx
 8021.11,Grand Concourse & E 161 St,40.82713380423556,-73.9227358996868,2025-01-01,3699,3670,27.0,gbfs_id,BX0401,Concourse-Concourse Village,Bronx
-8024.05,E 169 St & Fox St,40.827184,-73.893721,2025-01-01,432,433,19.0,gbfs_id,BX0303,Crotona Park East,Bronx
+8024.05,E 169 St & Fox St,40.827184,-73.893721,2025-01-01,432,433,18.0,gbfs_id,BX0303,Crotona Park East,Bronx
 8025.01,E 153 St & E 157 St,40.826677,-73.929327,2025-01-01,1359,1357,19.0,gbfs_id,BX0491,Yankee Stadium-Macombs Dam Park,Bronx
 8029.28,Macombs Pl & W 152 St,40.826406,-73.937948,2025-01-01,2648,2664,33.0,gbfs_id,MN1002,Harlem (North),Manhattan
 8033.09,W 148 St & Amsterdam Ave,40.827075,-73.945909,2025-01-01,2239,2063,23.0,gbfs_id,MN0903,Hamilton Heights-Sugar Hill,Manhattan
@@ -2001,7 +2001,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 8249.10,Walton Ave & E 171 St,40.840683,-73.915073,2025-01-01,1930,1923,19.0,gbfs_id,BX0403,Mount Eden-Claremont (West),Bronx
 8252.03,Crotona Pkwy & Elsmere Pl,40.84188,-73.8855,2025-01-01,761,751,25.0,gbfs_id,BX0601,West Farms,Bronx
 8254.01,W 170 St & University Ave,40.84207,-73.926075,2025-01-01,1283,1188,22.0,gbfs_id,BX0402,Highbridge,Bronx
-8257.03,Crotona Ave & Crotona Park N,40.84234,-73.89409,2025-01-01,682,714,,missing,BX0602,Tremont,Bronx
+8257.03,Crotona Ave & Crotona Park N,40.84234,-73.89409,2025-01-01,682,714,20.0,gbfs_id,BX0602,Tremont,Bronx
 8262.07,W 171 St & St Nicholas Ave,40.842941,-73.938631,2025-01-01,2317,2115,31.0,gbfs_id,MN1201,Washington Heights (South),Manhattan
 8265.09,Grand Concourse & E Mount Eden Ave,40.84301,-73.91172,2025-01-01,1779,1763,19.0,gbfs_id,BX0403,Mount Eden-Claremont (West),Bronx
 8268.08,E 179 St & Daly Ave,40.84335,-73.88247,2025-01-01,502,481,19.0,gbfs_id,BX0601,West Farms,Bronx
@@ -2016,7 +2016,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 8285.11,Featherbed Ln & Jerome Ave,40.845505,-73.914311,2025-01-02,520,525,21.0,gbfs_id,BX0501,University Heights (South)-Morris Heights,Bronx
 8288.11,E 179 St & Southern Blvd,40.84467,-73.88507,2025-01-01,882,884,25.0,gbfs_id,BX0601,West Farms,Bronx
 8290.01,Nelson Ave & W 172 St,40.843965,-73.920999,2025-01-01,1337,1249,20.0,gbfs_id,BX0403,Mount Eden-Claremont (West),Bronx
-8293.12,Arthur Ave & E Tremont Ave,40.84616,-73.89322,2025-01-01,2209,2231,18.0,gbfs_id,BX0602,Tremont,Bronx
+8293.12,Arthur Ave & E Tremont Ave,40.84616,-73.89322,2025-01-01,2209,2231,19.0,gbfs_id,BX0602,Tremont,Bronx
 8299.03,Wadsworth Ave & W 175 St,40.846052,-73.937648,2025-01-01,2023,1911,24.0,gbfs_id,MN1201,Washington Heights (South),Manhattan
 8303.06,Grand Concourse & E 175 St,40.84627592921954,-73.90931278467178,2025-01-01,740,709,24.0,gbfs_id,BX0502,Mount Hope,Bronx
 8306.03,Vyse Ave & E 181 St,40.84463,-73.87988,2025-01-01,445,450,20.0,gbfs_id,BX0601,West Farms,Bronx
@@ -2060,7 +2060,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 8397.02,E Burnside Ave & Ryer Ave,40.850535,-73.901318,2025-01-01,1161,1152,21.0,gbfs_id,BX0502,Mount Hope,Bronx
 8399.06,Fort Washington Ave & W 183 St,40.852252,-73.937854,2025-01-01,1838,1471,30.0,gbfs_id,MN1202,Washington Heights (North),Manhattan
 8403.02,E Tremont Ave & Jerome Ave,40.851747,-73.908964,2025-01-01,365,370,20.0,gbfs_id,BX0502,Mount Hope,Bronx
-8407.03,W Tremont Ave & Montgomery Ave,40.851788,-73.916418,2025-01-01,646,663,21.0,gbfs_id,BX0501,University Heights (South)-Morris Heights,Bronx
+8407.03,W Tremont Ave & Montgomery Ave,40.851788,-73.916418,2025-01-01,646,663,20.0,gbfs_id,BX0501,University Heights (South)-Morris Heights,Bronx
 8410.10,E 182 St & Belmont Ave,40.85089,-73.88793,2025-01-01,573,600,22.0,gbfs_id,BX0602,Tremont,Bronx
 8415.01,E 181 St & Bathgate Ave,40.85198,-73.89438,2025-01-01,716,726,21.0,gbfs_id,BX0602,Tremont,Bronx
 8416.07,Broadway & W 185 St,40.852538,-73.93441,2025-01-01,1663,1601,21.0,gbfs_id,MN1202,Washington Heights (North),Manhattan
@@ -2108,7 +2108,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 8535.01,Buchanan Pl & Grand Ave,40.85834,-73.90626,2025-01-01,645,638,21.0,gbfs_id,BX0501,University Heights (South)-Morris Heights,Bronx
 8535.09,Aqueduct Ave & North St,40.8604787,-73.9057169936,2025-01-01,422,423,20.0,gbfs_id,BX0701,University Heights (North)-Fordham,Bronx
 8539.02,Sedgwick Ave & Hall of Fame Terrace,40.859532,-73.913303,2025-01-01,128,111,19.0,gbfs_id,BX0501,University Heights (South)-Morris Heights,Bronx
-8541.04,E 191 St & Bathgate Ave,40.8601,-73.8866,2025-01-01,725,748,29.0,gbfs_id,BX0603,Belmont,Bronx
+8541.04,E 191 St & Bathgate Ave,40.8601,-73.8866,2025-01-01,725,748,30.0,gbfs_id,BX0603,Belmont,Bronx
 8543.01,10 Ave & W 202 St,40.861281970750994,-73.921417593956,2025-01-01,429,429,23.0,gbfs_id,MN1203,Inwood,Manhattan
 8546.06,Tiebout Ave & E Fordham Rd,40.861915,-73.894831,2025-01-01,2022,2012,31.0,gbfs_id,BX0503,Fordham Heights,Bronx
 8547.04,Broadway & Ellwood St,40.862058,-73.929719,2025-01-01,817,812,19.0,gbfs_id,MN1202,Washington Heights (North),Manhattan
@@ -2148,7 +2148,7 @@ station_id,name,lat,lng,first_seen,departures,arrivals,capacity,capacity_source,
 8650.11,Seaman Ave & Beak St,40.867505,-73.926363,2025-01-01,1029,1063,21.0,gbfs_id,MN1203,Inwood,Manhattan
 8653.09,Jerome Ave & W 195 St,40.86874,-73.89657,2025-01-01,1439,1405,32.0,gbfs_id,BX0702,Bedford Park,Bronx
 8655.02,Dyckman St & Staff St,40.868846,-73.931537,2025-01-01,1007,1034,19.0,gbfs_id,MN1202,Washington Heights (North),Manhattan
-8664.06,Decatur Ave & Bedford Park Blvd,40.86813,-73.88412,2025-01-01,242,248,19.0,gbfs_id,BX0702,Bedford Park,Bronx
+8664.06,Decatur Ave & Bedford Park Blvd,40.86813,-73.88412,2025-01-01,242,248,20.0,gbfs_id,BX0702,Bedford Park,Bronx
 8665.02,Seaman Ave & Isham St,40.869898661940454,-73.92076313495636,2025-01-01,835,882,23.0,gbfs_id,MN1203,Inwood,Manhattan
 8665.09,Isham St & Broadway,40.86788,-73.919685,2025-01-01,1499,1599,29.0,gbfs_id,MN1203,Inwood,Manhattan
 8667.01,Grand Concourse & E 197 St,40.86945,-73.89148,2025-01-01,233,249,,missing,BX0702,Bedford Park,Bronx
@@ -2217,7 +2217,7 @@ HB304,7 St & Monroe St,40.74641264837719,-74.03797701001167,2025-07-08,0,1,22.0,
 HB305,9 St HBLR - Jackson St & 8 St,40.74790720968899,-74.03841152787209,2025-07-08,0,3,18.0,gbfs_id,,,
 HB401,Southwest Park - Jackson St & Observer Hwy,40.73755127245804,-74.04166370630264,2025-01-14,0,3,20.0,gbfs_id,,,
 HB402,Madison St & 1 St,40.73879,-74.0393,2025-07-21,0,1,21.0,gbfs_id,,,
-HB404,Mama Johnson Field - 4 St & Jackson St,40.74313993965626,-74.04004096984863,2025-07-02,0,6,16.0,gbfs_id,,,
+HB404,Mama Johnson Field - 4 St & Jackson St,40.74313993965626,-74.04004096984863,2025-07-02,0,6,22.0,gbfs_id,,,
 HB407,Adams St & 2 St,40.73981372311843,-74.03690412640572,2025-07-21,0,2,15.0,gbfs_id,,,
 HB409,Clinton St & Newark St,40.73743,-74.03571,2025-07-18,0,1,14.0,gbfs_id,,,
 HB501,Columbus Park - Clinton St & 9 St,40.74816121065146,-74.0324530005455,2025-01-10,0,18,26.0,gbfs_id,,,
@@ -2240,7 +2240,7 @@ JC009,Hamilton Park,40.727595966,-74.044247311,2025-07-03,0,11,26.0,gbfs_id,,,
 JC013,Marin Light Rail,40.71458403535893,-74.04281705617905,2025-01-15,0,33,26.0,gbfs_id,,,
 JC014,Columbus Drive,40.71835519823214,-74.03891444206238,2025-01-07,0,45,14.0,gbfs_id,,,
 JC023,Brunswick St,40.7241765,-74.0506564,2025-01-27,0,4,22.0,gbfs_id,,,
-JC024,Pershing Field,40.742677141,-74.051788633,2025-10-24,0,2,17.0,gbfs_id,,,
+JC024,Pershing Field,40.742677141,-74.051788633,2025-10-24,0,2,18.0,gbfs_id,,,
 JC027,Jersey & 6th St,40.72528910781132,-74.04557168483734,2025-07-17,0,4,14.0,gbfs_id,,,
 JC032,Newark Ave,40.72152515,-74.046304543,2025-01-29,0,8,22.0,gbfs_id,,,
 JC035,Van Vorst Park,40.71848892,-74.047726625,2025-01-09,0,7,22.0,gbfs_id,,,
@@ -2256,7 +2256,7 @@ JC074,Jersey & 3rd,40.72333158646436,-74.04595255851744,2025-07-02,0,6,14.0,gbfs
 JC075,Monmouth & 6th,40.72568548362901,-74.04879033565521,2025-07-09,0,1,14.0,gbfs_id,,,
 JC076,Dixon Mills,40.721630142638354,-74.04996782541275,2025-07-11,0,6,18.0,gbfs_id,,,
 JC077,Astor Place,40.71928220070702,-74.07126188278198,2025-07-23,0,2,14.0,gbfs_id,,,
-JC081,Brunswick & 6th,40.72601172964625,-74.05038893222809,2025-07-31,0,1,10.0,gbfs_id,,,
+JC081,Brunswick & 6th,40.72601172964625,-74.05038893222809,2025-07-31,0,1,14.0,gbfs_id,,,
 JC095,Bergen Ave,40.722103786686034,-74.07145500183105,2025-10-01,0,1,14.0,gbfs_id,,,
 JC097,York St & Marin Blvd,40.716615000830494,-74.0424120426178,2025-07-30,0,2,18.0,gbfs_id,,,
 JC098,Washington St,40.7242941,-74.0354826,2025-07-30,0,3,18.0,gbfs_id,,,
